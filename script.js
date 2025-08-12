@@ -145,6 +145,11 @@ function renderSkills(repos) {
   });
   html += '</div>';
   document.getElementById('skills').innerHTML = html;
+  Array.from(skills).sort().forEach(skill => {
+    html += `<span class="skill-badge">${skill}</span>`;
+  });
+  html += '</div>';
+  document.getElementById('skills').innerHTML = html;
 }
 
 function renderContact(profile) {
@@ -169,10 +174,25 @@ function setupThemeToggle() {
 }
 
 async function main() {
-  const [profile, repos] = await Promise.all([
-    fetchProfile(),
-    fetchRepos()
-  ]);
+  try {
+    const [profile, repos] = await Promise.all([
+      fetchProfile(),
+      fetchRepos()
+    ]);
+    renderAbout(profile);
+    renderProjects(repos);
+    renderSkills(repos);
+    renderContact(profile);
+    setupThemeToggle();
+  } catch (error) {
+    console.error('Error in main:', error);
+  }
+}
+
+// Start the application
+document.addEventListener('DOMContentLoaded', () => {
+  main().catch(console.error);
+});
   renderAbout(profile);
   renderProjects(repos);
   renderSkills(repos);
