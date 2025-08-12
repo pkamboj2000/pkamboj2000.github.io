@@ -1,16 +1,28 @@
 // Fetch GitHub profile and pinned repos, then populate sections
 const GITHUB_USER = 'pkamboj2000';
-const API_BASE = 'https://gh-pinned-repos.egoist.dev/?username=';
 const PROFILE_API = `https://api.github.com/users/${GITHUB_USER}`;
+const REPOS_API = `https://api.github.com/users/${GITHUB_USER}/repos`;
 
 async function fetchProfile() {
   const res = await fetch(PROFILE_API);
   return res.json();
 }
 
-async function fetchPinnedRepos() {
-  const res = await fetch(`${API_BASE}${GITHUB_USER}`);
-  return res.json();
+async function fetchRepos() {
+  const res = await fetch(REPOS_API);
+  const repos = await res.json();
+  // Sort by stars and get top repos
+  return repos
+    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+    .slice(0, 6)
+    .map(repo => ({
+      repo: repo.name,
+      link: repo.html_url,
+      description: repo.description,
+      language: repo.language,
+      stars: repo.stargazers_count,
+      forks: repo.forks_count
+    }));
 }
 
 function renderAbout(profile) {
@@ -20,6 +32,7 @@ function renderAbout(profile) {
       <img src="${profile.avatar_url}" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-blue-400" />
       <div>
         <p class="text-lg font-semibold">${profile.name || profile.login}</p>
+        <p>Masters in Computer Science at University of Texas at Arlington</p>
         <p>${profile.bio || ''}</p>
         <a href="${profile.html_url}" class="text-blue-500 underline" target="_blank">GitHub Profile</a>
       </div>
@@ -35,12 +48,13 @@ function renderProjects(repos) {
         <h3 class="text-xl font-bold mb-2">
           <a href="${repo.link}" target="_blank" class="hover:underline">${repo.repo}</a>
         </h3>
-        <p class="mb-2">${repo.description || ''}</p>
+        <p class="mb-2">${repo.description || 'A GitHub repository'}</p>
         <div class="flex flex-wrap items-center mb-2">
           ${(repo.language ? `<span class="skill-badge">${repo.language}</span>` : '')}
         </div>
         <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
           <span class="mr-4">★ ${repo.stars}</span>
+          <span class="mr-4">🔄 ${repo.forks}</span>
           <a href="${repo.link}" target="_blank" class="text-blue-500 ml-auto">View Repo</a>
         </div>
       </div>
@@ -87,7 +101,7 @@ function setupThemeToggle() {
 async function main() {
   const [profile, repos] = await Promise.all([
     fetchProfile(),
-    fetchPinnedRepos()
+    fetchRepos()
   ]);
   renderAbout(profile);
   renderProjects(repos);
