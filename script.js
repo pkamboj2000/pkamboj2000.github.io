@@ -1,60 +1,75 @@
 // Fetch GitHub profile and pinned repos, then populate sections
 const GITHUB_USER = 'pkamboj2000';
-const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
-const PROFILE_API = `${CORS_PROXY}https://api.github.com/users/${GITHUB_USER}`;
-const REPOS_API = `${CORS_PROXY}https://api.github.com/users/${GITHUB_USER}/repos`;
 
 async function fetchProfile() {
-  try {
-    const res = await fetch(PROFILE_API);
-    if (!res.ok) throw new Error('Profile fetch failed');
-    return res.json();
-  } catch (error) {
-    console.error('Error fetching profile:', error);
-    return {
-      name: 'Pranjal Kamboj',
-      login: 'pkamboj2000',
-      avatar_url: 'https://avatars.githubusercontent.com/u/pkamboj2000',
-      bio: '',
-      location: 'Arlington Texas',
-      html_url: 'https://github.com/pkamboj2000'
-    };
-  }
+  return {
+    name: 'Pranjal Kamboj',
+    login: 'pkamboj2000',
+    avatar_url: 'https://avatars.githubusercontent.com/u/pkamboj2000',
+    bio: 'Masters in Computer Science Student',
+    location: 'Arlington Texas',
+    html_url: 'https://github.com/pkamboj2000'
+  };
 }
 
 async function fetchRepos() {
-  try {
-    const res = await fetch(REPOS_API);
-    if (!res.ok) throw new Error('Repos fetch failed');
-    const repos = await res.json();
-    // Sort by recently updated
-    return repos
-      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-      .map(repo => ({
-        repo: repo.name,
-        link: repo.html_url,
-        description: repo.description,
-        language: repo.language,
-        stars: repo.stargazers_count,
-        forks: repo.forks_count,
-        updated: new Date(repo.updated_at).toLocaleDateString(),
-        homepage: repo.homepage
-      }));
-  } catch (error) {
-    console.error('Error fetching repos:', error);
-    return [
-      {
-        repo: 'pkamboj2000.github.io',
-        link: 'https://github.com/pkamboj2000/pkamboj2000.github.io',
-        description: 'My portfolio website',
-        language: 'JavaScript',
-        stars: 0,
-        forks: 0,
-        updated: new Date().toLocaleDateString(),
-        homepage: 'https://pkamboj2000.github.io'
-      }
-    ];
-  }
+  const projects = [
+    {
+      repo: 'Django-Fundamentals',
+      link: 'https://github.com/pkamboj2000/Django-Fundamentals',
+      description: 'Django Framework Fundamentals and Basics',
+      language: 'Python',
+      stars: 0,
+      forks: 0,
+      updated: '2023-08-11'
+    },
+    {
+      repo: 'E-commerce-Website',
+      link: 'https://github.com/pkamboj2000/E-commerce-Website',
+      description: 'Full-featured E-commerce website built with Django',
+      language: 'Python',
+      stars: 0,
+      forks: 0,
+      updated: '2023-08-11'
+    },
+    {
+      repo: 'python_basics',
+      link: 'https://github.com/pkamboj2000/python_basics',
+      description: 'Python programming fundamentals and exercises',
+      language: 'Python',
+      stars: 0,
+      forks: 0,
+      updated: '2023-08-11'
+    },
+    {
+      repo: 'NodeJS-Tutorial',
+      link: 'https://github.com/pkamboj2000/NodeJS-Tutorial',
+      description: 'Learning Node.js fundamentals and building applications',
+      language: 'JavaScript',
+      stars: 0,
+      forks: 0,
+      updated: '2023-08-11'
+    },
+    {
+      repo: 'React-JS',
+      link: 'https://github.com/pkamboj2000/React-JS',
+      description: 'React.js projects and learning materials',
+      language: 'JavaScript',
+      stars: 0,
+      forks: 0,
+      updated: '2023-08-11'
+    },
+    {
+      repo: 'pkamboj2000.github.io',
+      link: 'https://github.com/pkamboj2000/pkamboj2000.github.io',
+      description: 'My personal portfolio website',
+      language: 'JavaScript',
+      stars: 0,
+      forks: 0,
+      updated: '2023-08-11'
+    }
+  ];
+  return projects;
   // Get all repos and sort by recently updated
   return repos
     .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
@@ -112,22 +127,18 @@ function renderProjects(repos) {
 }
 
 function renderSkills(repos) {
-  const skills = new Set();
-  // Add programming languages
-  repos.forEach(repo => {
-    if (repo.language) skills.add(repo.language);
-  });
-  // Add common web technologies based on repo names and descriptions
-  repos.forEach(repo => {
-    const text = `${repo.repo} ${repo.description || ''}`.toLowerCase();
-    if (text.includes('react')) skills.add('React');
-    if (text.includes('node')) skills.add('Node.js');
-    if (text.includes('javascript')) skills.add('JavaScript');
-    if (text.includes('python')) skills.add('Python');
-    if (text.includes('html')) skills.add('HTML');
-    if (text.includes('css')) skills.add('CSS');
-    if (text.includes('database') || text.includes('sql')) skills.add('Database');
-  });
+  const skills = new Set([
+    'Python',
+    'Django',
+    'JavaScript',
+    'React',
+    'Node.js',
+    'HTML',
+    'CSS',
+    'Git',
+    'SQL',
+    'REST API'
+  ]);
   let html = '<h2>Skills</h2><div class="flex flex-wrap gap-2">';
   Array.from(skills).sort().forEach(skill => {
     html += `<span class="skill-badge">${skill}</span>`;
