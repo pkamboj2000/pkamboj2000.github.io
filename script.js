@@ -11,17 +11,18 @@ async function fetchProfile() {
 async function fetchRepos() {
   const res = await fetch(REPOS_API);
   const repos = await res.json();
-  // Sort by stars and get top repos
+  // Get all repos and sort by recently updated
   return repos
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 6)
+    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
     .map(repo => ({
       repo: repo.name,
       link: repo.html_url,
       description: repo.description,
       language: repo.language,
       stars: repo.stargazers_count,
-      forks: repo.forks_count
+      forks: repo.forks_count,
+      updated: new Date(repo.updated_at).toLocaleDateString(),
+      homepage: repo.homepage
     }));
 }
 
@@ -46,16 +47,18 @@ function renderProjects(repos) {
     html += `
       <div class="project-card">
         <h3 class="text-xl font-bold mb-2">
-          <a href="${repo.link}" target="_blank" class="hover:underline">${repo.repo}</a>
+          <a href="${repo.link}" target="_blank" class="hover:underline">${repo.repo.replace(/-/g, ' ')}</a>
         </h3>
         <p class="mb-2">${repo.description || 'A GitHub repository'}</p>
         <div class="flex flex-wrap items-center mb-2">
           ${(repo.language ? `<span class="skill-badge">${repo.language}</span>` : '')}
         </div>
-        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+        <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400">
           <span class="mr-4">★ ${repo.stars}</span>
           <span class="mr-4">🔄 ${repo.forks}</span>
-          <a href="${repo.link}" target="_blank" class="text-blue-500 ml-auto">View Repo</a>
+          <span class="mr-4">📅 ${repo.updated}</span>
+          ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="text-green-500 mr-4">Live Demo</a>` : ''}
+          <a href="${repo.link}" target="_blank" class="text-blue-500">View Code</a>
         </div>
       </div>
     `;
@@ -66,11 +69,23 @@ function renderProjects(repos) {
 
 function renderSkills(repos) {
   const skills = new Set();
+  // Add programming languages
   repos.forEach(repo => {
     if (repo.language) skills.add(repo.language);
   });
-  let html = '<h2>Skills</h2><div>';
-  skills.forEach(skill => {
+  // Add common web technologies based on repo names and descriptions
+  repos.forEach(repo => {
+    const text = `${repo.repo} ${repo.description || ''}`.toLowerCase();
+    if (text.includes('react')) skills.add('React');
+    if (text.includes('node')) skills.add('Node.js');
+    if (text.includes('javascript')) skills.add('JavaScript');
+    if (text.includes('python')) skills.add('Python');
+    if (text.includes('html')) skills.add('HTML');
+    if (text.includes('css')) skills.add('CSS');
+    if (text.includes('database') || text.includes('sql')) skills.add('Database');
+  });
+  let html = '<h2>Skills</h2><div class="flex flex-wrap gap-2">';
+  Array.from(skills).sort().forEach(skill => {
     html += `<span class="skill-badge">${skill}</span>`;
   });
   html += '</div>';
