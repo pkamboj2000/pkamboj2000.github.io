@@ -1,0 +1,304 @@
+document.addEventListener(    document.querySelector('#adocument.addEventListener('DOMContentLoaded', function() {
+    // Update About section
+    document.querySelector('#about').innerHTML = `
+        <h2 class="text-2xl font-bold mb-6">About Me</h2>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-shrink-0">
+                <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Profile" 
+                    class="w-40 h-40 rounded-full shadow-lg profile-img">
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-2xl font-semibold mb-2">Pranjal Kamboj</h3>
+                <p class="text-lg mb-4">Masters in Computer Science at University of Texas at Arlington</p>
+                <p class="mb-4">
+                    I'm a Machine Learning Engineer and AI enthusiast specializing in Large Language Models (LLMs), 
+                    Natural Language Processing, and Computer Vision. My expertise includes developing multi-agent AI systems, 
+                    implementing RAG pipelines, and creating sophisticated machine learning models.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        <span>Arlington, Texas</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                        </svg>
+                        <span>Expected Graduation: 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;HTML = `
+        <h2 class="text-2xl font-bold mb-6">About Me</h2>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="flex-shrink-0">
+                <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Profile" class="w-40 h-40 rounded-full shadow-lg">
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-2xl font-semibold mb-2">Pranjal Kamboj</h3>
+                <p class="text-lg mb-4">Masters in Computer Science at University of Texas at Arlington</p>
+                <p class="mb-4">
+                    I'm a Machine Learning Engineer and AI enthusiast specializing in Large Language Models (LLMs), 
+                    Natural Language Processing, and Computer Vision. My expertise includes developing multi-agent AI systems, 
+                    implementing RAG pipelines, and creating sophisticated machine learning models.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        <span>Arlington, Texas</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                        </svg>
+                        <span>Expected Graduation: 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;oaded', function() {
+    console.log('DOM Content Loaded');
+    // Update About sectio    // Update Projects section
+    document.getElementById('projects').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">Projects</h2>
+        <div class="grid grid-cols-1 gap-6">
+            ${projects.map(project => `
+                <div class="project-card">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">
+                            <a href="${project.link}" target="_blank" class="hover:underline text-blue-500">${project.name}</a>
+                        </h3>
+                        <button onclick="window.open('${project.sourceUrl}', '_blank')" 
+                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-sm rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            View Source
+                        </button>
+                    </div>
+                    <p class="mb-4 text-gray-600 dark:text-gray-300">${project.description}</p>
+                    <div class="flex flex-wrap gap-2">
+                        ${project.tech.split(', ').map(tech => 
+                            `<span class="skill-badge bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">${tech}</span>`
+                        ).join('')}
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;ySelector('#about').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <div class="flex flex-col gap-4">
+            <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Profile" class="w-32 h-32 rounded-full">
+            <div>
+                <h3 class="text-xl font-semibold">Pranjal Kamboj</h3>
+                <p class="text-lg mb-2">Masters in Computer Science at University of Texas at Arlington</p>
+                <p class="mb-2">Location: Arlington, Texas</p>
+                <a href="https://github.com/pkamboj2000" class="text-blue-500 hover:underline" target="_blank">GitHub Profile</a>
+            </div>
+        </div>
+    `;
+
+    // All skills
+    const skills = [
+        'Python', 'LangChain', 'FastAPI', 'PyTorch',
+        'Deep Learning', 'NLP', 'Computer Vision',
+        'LLMs', 'RAG', 'MCP', 'CrewAI',
+        'Machine Learning', 'AI Development',
+        'Transformers', 'API Development'
+    ];
+
+    // Update Skills section
+    document.getElementById('skills').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">Skills</h2>
+        <div class="flex flex-wrap gap-2">
+            ${skills.map(skill => `<span class="skill-badge">${skill}</span>`).join('')}
+        </div>
+    `;
+
+    // Update Contact section
+    document.getElementById('contact').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">Contact</h2>
+        <div class="space-y-2">
+            <p>Email: Not public</p>
+            <p>Location: Arlington Texas</p>
+            <p>GitHub: <a href="https://github.com/pkamboj2000" class="text-blue-500 hover:underline" target="_blank">pkamboj2000</a></p>
+        </div>
+    `;
+
+    console.log('Contact section updated');
+
+    // Project list
+    const projects = [
+        {
+            name: 'Multi-agent-parallel-workflows-using-CrewAI',
+            description: 'This project showcases a multi-agent workflow using CrewAI to create unbiased automotive reviews.',
+            tech: 'Python, LangChain, CrewAI, FastAPI',
+            link: 'https://github.com/pkamboj2000/Multi-agent-parallel-workflows-using-CrewAI',
+            sourceUrl: 'https://raw.githubusercontent.com/pkamboj2000/Multi-agent-parallel-workflows-using-CrewAI/main/main.py'
+        },
+        {
+            name: 'Fine-tuning-Lora-Qlora',
+            description: 'Fine-tunes the LLaMA 2 7B model using QLoRA on the Alpaca dataset.',
+            tech: 'Python, PyTorch, Transformers',
+            link: 'https://github.com/pkamboj2000/Fine-tuning-Lora-Qlora',
+            sourceUrl: 'https://raw.githubusercontent.com/pkamboj2000/Fine-tuning-Lora-Qlora/main/train.py'
+        },
+        {
+            name: 'Langchain-agents-and-tools',
+            description: 'Multi-tool LLM agent system for enhanced information retrieval.',
+            tech: 'Python, LangChain, LLMs',
+            link: 'https://github.com/pkamboj2000/Langchain-agents-and-tools',
+            sourceUrl: 'https://raw.githubusercontent.com/pkamboj2000/Langchain-agents-and-tools/main/agent.py'
+        },
+        {
+            name: 'RAG-pipeline',
+            description: 'LangChain-based RAG pipeline for document processing.',
+            tech: 'Python, LangChain, RAG',
+            link: 'https://github.com/pkamboj2000/RAG-pipeline',
+            sourceUrl: 'https://raw.githubusercontent.com/pkamboj2000/RAG-pipeline/main/app.py'
+        },
+        {
+            name: 'MCP-tools-and-agents',
+            description: 'Weather-aware AI agent system using Model Context Protocol.',
+            tech: 'Python, MCP, FastAPI',
+            link: 'https://github.com/pkamboj2000/MCP-tools-and-agents',
+            sourceUrl: 'https://raw.githubusercontent.com/pkamboj2000/MCP-tools-and-agents/main/agent.py'
+        },
+        {
+            name: 'Model-context-protocol',
+            description: 'An intelligent university information assistant using LangChain MCP Agent.',
+            tech: 'Python, LangChain, FastAPI',
+            link: 'https://github.com/pkamboj2000/Model-context-protocol',
+            sourceUrl: 'https://raw.githubusercontent.com/pkamboj2000/Model-context-protocol/main/app.py'
+        },
+        {
+            name: 'AI-career-planner',
+            description: 'Autonomous agent for extracting job-relevant skills using LangChain and OpenAI.',
+            tech: 'Python, LangChain, OpenAI',
+            link: 'https://github.com/pkamboj2000/AI-career-planner'
+        },
+        {
+            name: 'Autoencoder-Based-Abnormality-Detection',
+            description: 'X-Ray abnormality detection using autoencoders on MURA dataset.',
+            tech: 'Python, PyTorch, Computer Vision',
+            link: 'https://github.com/pkamboj2000/Autoencoder-Based-Abnormality-Detection-in-Bone-X-Ray-images-Using-MURA-Dataset'
+        },
+        {
+            name: 'RAG-pipeline',
+            description: 'LangChain-based RAG pipeline for document processing.',
+            tech: 'Python, LangChain, RAG',
+            link: 'https://github.com/pkamboj2000/RAG-pipeline'
+        },
+        {
+            name: 'MCP-tools-and-agents',
+            description: 'Weather-aware AI agent system using Model Context Protocol.',
+            tech: 'Python, MCP, FastAPI',
+            link: 'https://github.com/pkamboj2000/MCP-tools-and-agents'
+        },
+        {
+            name: 'Langchain-agents-and-tools',
+            description: 'Multi-tool LLM agent system for enhanced information retrieval.',
+            tech: 'Python, LangChain, LLMs',
+            link: 'https://github.com/pkamboj2000/Langchain-agents-and-tools'
+        },
+        {
+            name: 'Air-quality-prediction',
+            description: 'LSTM model for air pollution forecasting with multivariate data.',
+            tech: 'Python, TensorFlow, LSTM',
+            link: 'https://github.com/pkamboj2000/-Air-quality-prediction-using-multivariate-data-with-Long-Short-Term-Memory'
+        },
+        {
+            name: 'Plant-Disease-Detection-using-CNN',
+            description: 'CNN-based system for automated plant disease diagnosis.',
+            tech: 'Python, CNN, Deep Learning',
+            link: 'https://github.com/pkamboj2000/Plant-Disease-Detection-using-CNN'
+        },
+        {
+            name: 'MEDNet-Cataract-Detection',
+            description: 'Medical image analysis for cataract detection using MEDNet.',
+            tech: 'Python, PyTorch, Computer Vision',
+            link: 'https://github.com/pkamboj2000/MEDNet-based-Imbalanced-Cataract-Detection-using-Digital-Eye-Images'
+        }
+    ];
+
+    // Update Projects section
+    document.getElementById('projects').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">Projects</h2>
+        <div class="grid grid-cols-1 gap-6">
+            ${projects.map(project => `
+                                <div class="project-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-2">
+                        ${project.name}
+                    </h3>
+                    <p class="mb-4">${project.description}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${project.tech.split(', ').map(tech => 
+                            `<span class="skill-badge">${tech}</span>`
+                        ).join('')}
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="${project.link}" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Source Code
+                        </a>
+                        ${project.demo ? `
+                        <a href="${project.demo}" target="_blank" class="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            Live Demo
+                        </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+    console.log('Projects updated:', projects.length, 'projects');
+
+    // Theme toggle functionality
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', function() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        console.log('Theme toggled to:', newTheme);
+    });
+
+    // Set initial theme based on user preference
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    // Update Contact section
+    document.getElementById('contact').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">Contact</h2>
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <a href="mailto:pranjal.kamboj@mavs.uta.edu" class="text-blue-500 hover:underline">pranjal.kamboj@mavs.uta.edu</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <a href="https://github.com/pkamboj2000" class="text-blue-500 hover:underline" target="_blank">GitHub Profile</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                </svg>
+                <a href="https://www.linkedin.com/in/pranjal-kamboj-5a6905228/" class="text-blue-500 hover:underline" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    `;
+});
