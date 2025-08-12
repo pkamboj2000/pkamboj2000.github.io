@@ -1,310 +1,171 @@
-// Fetch GitHub profile and pinned repos, then populate sections
-// Initialize when DOM is loaded
-// Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     // Update About section
     document.querySelector('#about').innerHTML = `
-        <h2 class="text-2xl font-bold mb-4">About Me</h2>
-        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-            <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Profile" class="w-32 h-32 rounded-full">
-            <div>
-                <h3 class="text-xl font-semibold">Pranjal Kamboj</h3>
-                <p class="text-lg mb-2">Masters in Computer Science at University of Texas at Arlington</p>
-                <p class="mb-2">Location: Arlington, Texas</p>
-                <a href="https://github.com/pkamboj2000" class="text-blue-500 hover:underline" target="_blank">GitHub Profile</a>
+        <h2 class="text-2xl font-bold mb-6">About Me</h2>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-shrink-0">
+                <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Profile" 
+                    class="w-40 h-40 rounded-full shadow-lg profile-img">
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-2xl font-semibold mb-2">Pranjal Kamboj</h3>
+                <p class="text-lg mb-4">Masters in Computer Science at University of Texas at Arlington</p>
+                <p class="mb-4">
+                    I'm a Machine Learning Engineer and AI enthusiast specializing in Large Language Models (LLMs), 
+                    Natural Language Processing, and Computer Vision. My expertise includes developing multi-agent AI systems, 
+                    implementing RAG pipelines, and creating sophisticated machine learning models.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        <span>Arlington, Texas</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+                        </svg>
+                        <span>Graduated: Masters in Computer Science</span>
+                    </div>
+                </div>
             </div>
         </div>
     `;
 
-    // Project list
-    const projects = [
-        {
-            name: 'Django Fundamentals',
-            description: 'Learning Django Framework basics and building web applications',
-            tech: 'Python, Django',
-            link: 'https://github.com/pkamboj2000/Django-Fundamentals'
-        },
-        {
-            name: 'E-commerce Website',
-            description: 'Full-featured e-commerce platform built with Django',
-            tech: 'Python, Django, HTML, CSS',
-            link: 'https://github.com/pkamboj2000/E-commerce-Website'
-        },
-        {
-            name: 'Python Basics',
-            description: 'Python programming fundamentals and exercises',
-            tech: 'Python',
-            link: 'https://github.com/pkamboj2000/python_basics'
-        },
-        {
-            name: 'NodeJS Tutorial',
-            description: 'Learning Node.js and building backend applications',
-            tech: 'JavaScript, Node.js',
-            link: 'https://github.com/pkamboj2000/NodeJS-Tutorial'
-        },
-        {
-            name: 'React Projects',
-            description: 'Collection of React.js projects and components',
-            tech: 'JavaScript, React',
-            link: 'https://github.com/pkamboj2000/React-JS'
-        }
-    ];
-
-    // All skills from projects
+    // All skills
     const skills = [
-        'Python', 'Django', 'JavaScript', 'Node.js', 'React',
-        'HTML', 'CSS', 'Git', 'SQL', 'REST API'
+        'Python', 'LangChain', 'FastAPI', 'PyTorch',
+        'Deep Learning', 'NLP', 'Computer Vision',
+        'LLMs', 'RAG', 'MCP', 'CrewAI',
+        'Machine Learning', 'AI Development',
+        'Transformers', 'API Development'
     ];
-
-    // Update About section
-    document.getElementById('about').innerHTML = `
-        <h2>About Me</h2>
-        <div class="flex items-center space-x-4">
-            <div>
-                <p class="text-lg font-semibold">${profile.name}</p>
-                <p>${profile.title}</p>
-                <p>Location: ${profile.location}</p>
-                <a href="${profile.github}" class="text-blue-500 underline" target="_blank">GitHub Profile</a>
-            </div>
-        </div>
-    `;
 
     // Update Skills section
     document.getElementById('skills').innerHTML = `
-        <h2>Skills</h2>
+        <h2 class="text-2xl font-bold mb-4">Skills</h2>
         <div class="flex flex-wrap gap-2">
             ${skills.map(skill => `<span class="skill-badge">${skill}</span>`).join('')}
         </div>
     `;
 
+    // Project list with reordered projects
+    const projects = [
+        {
+            name: 'Multi-agent-parallel-workflows-using-CrewAI',
+            description: 'This project showcases a multi-agent workflow using CrewAI to create unbiased automotive reviews.',
+            tech: 'Python, LangChain, CrewAI, FastAPI',
+            link: 'https://github.com/pkamboj2000/Multi-agent-parallel-workflows-using-CrewAI'
+        },
+        {
+            name: 'Fine-tuning-Lora-Qlora',
+            description: 'Fine-tunes the LLaMA 2 7B model using QLoRA on the Alpaca dataset.',
+            tech: 'Python, PyTorch, Transformers',
+            link: 'https://github.com/pkamboj2000/Fine-tuning-Lora-Qlora'
+        },
+        {
+            name: 'Langchain-agents-and-tools',
+            description: 'Multi-tool LLM agent system for enhanced information retrieval.',
+            tech: 'Python, LangChain, LLMs',
+            link: 'https://github.com/pkamboj2000/Langchain-agents-and-tools'
+        },
+        {
+            name: 'RAG-pipeline',
+            description: 'LangChain-based RAG pipeline for document processing.',
+            tech: 'Python, LangChain, RAG',
+            link: 'https://github.com/pkamboj2000/RAG-pipeline'
+        },
+        {
+            name: 'MCP-tools-and-agents',
+            description: 'Weather-aware AI agent system using Model Context Protocol.',
+            tech: 'Python, MCP, FastAPI',
+            link: 'https://github.com/pkamboj2000/MCP-tools-and-agents'
+        },
+        {
+            name: 'Model-context-protocol',
+            description: 'An intelligent university information assistant using LangChain MCP Agent.',
+            tech: 'Python, LangChain, FastAPI',
+            link: 'https://github.com/pkamboj2000/Model-context-protocol'
+        },
+        {
+            name: 'AI-career-planner',
+            description: 'Autonomous agent for extracting job-relevant skills using LangChain and OpenAI.',
+            tech: 'Python, LangChain, OpenAI',
+            link: 'https://github.com/pkamboj2000/AI-career-planner'
+        },
+        {
+            name: 'Autoencoder-Based-Abnormality-Detection',
+            description: 'X-Ray abnormality detection using autoencoders on MURA dataset.',
+            tech: 'Python, PyTorch, Computer Vision',
+            link: 'https://github.com/pkamboj2000/Autoencoder-Based-Abnormality-Detection-in-Bone-X-Ray-images-Using-MURA-Dataset'
+        },
+        {
+            name: 'Air-quality-prediction',
+            description: 'LSTM model for air pollution forecasting with multivariate data.',
+            tech: 'Python, TensorFlow, LSTM',
+            link: 'https://github.com/pkamboj2000/-Air-quality-prediction-using-multivariate-data-with-Long-Short-Term-Memory'
+        },
+        {
+            name: 'Plant-Disease-Detection-using-CNN',
+            description: 'CNN-based system for automated plant disease diagnosis.',
+            tech: 'Python, CNN, Deep Learning',
+            link: 'https://github.com/pkamboj2000/Plant-Disease-Detection-using-CNN'
+        },
+        {
+            name: 'MEDNet-Cataract-Detection',
+            description: 'Medical image analysis for cataract detection using MEDNet.',
+            tech: 'Python, PyTorch, Computer Vision',
+            link: 'https://github.com/pkamboj2000/MEDNet-based-Imbalanced-Cataract-Detection-using-Digital-Eye-Images'
+        }
+    ];
+
     // Update Projects section
     document.getElementById('projects').innerHTML = `
-        <h2>Projects</h2>
-        <div class="grid md:grid-cols-2 gap-6">
+        <h2 class="text-2xl font-bold mb-6">Projects</h2>
+        <div class="grid grid-cols-1 gap-6">
             ${projects.map(project => `
-                <div class="project-card">
-                    <h3 class="text-xl font-bold mb-2">
-                        <a href="${project.link}" target="_blank" class="hover:underline">${project.name}</a>
+                <div class="project-card p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-blue-600 dark:text-blue-400">
+                        ${project.name}
                     </h3>
-                    <p class="mb-2">${project.description}</p>
-                    <div class="flex flex-wrap items-center mb-2">
+                    <p class="mb-4 text-gray-600 dark:text-gray-300">${project.description}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
                         ${project.tech.split(', ').map(tech => 
                             `<span class="skill-badge">${tech}</span>`
                         ).join('')}
                     </div>
-                    <div class="flex items-center text-sm">
-                        <a href="${project.link}" target="_blank" class="text-blue-500">View Project →</a>
+                    <div class="flex gap-4">
+                        <a href="${project.link}" target="_blank" 
+                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors">
+                            View Project
+                        </a>
                     </div>
                 </div>
             `).join('')}
         </div>
     `;
 
-    // Update Contact section
-    document.getElementById('contact').innerHTML = `
-        <h2>Contact</h2>
-        <div>
-            <p>Location: ${profile.location}</p>
-            <p>GitHub: <a href="${profile.github}" class="text-blue-500" target="_blank">pkamboj2000</a></p>
-        </div>
-    `;
-
     // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', function() {
-        const html = document.documentElement;
-        const isDark = html.getAttribute('data-theme') === 'dark';
-        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-        document.body.classList.toggle('dark', !isDark);
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    
+    // Function to set theme
+    const setTheme = (theme) => {
+        htmlElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        themeToggleBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+    };
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(savedTheme);
+
+    // Theme toggle event listener
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
     });
 });
-    
-    const myProjects = [
-  const projects = [
-    {
-      repo: 'Django-Fundamentals',
-      link: 'https://github.com/pkamboj2000/Django-Fundamentals',
-      description: 'Django Framework Fundamentals and Basics',
-      language: 'Python',
-      stars: 0,
-      forks: 0,
-      updated: '2023-08-11'
-    },
-    {
-      repo: 'E-commerce-Website',
-      link: 'https://github.com/pkamboj2000/E-commerce-Website',
-      description: 'Full-featured E-commerce website built with Django',
-      language: 'Python',
-      stars: 0,
-      forks: 0,
-      updated: '2023-08-11'
-    },
-    {
-      repo: 'python_basics',
-      link: 'https://github.com/pkamboj2000/python_basics',
-      description: 'Python programming fundamentals and exercises',
-      language: 'Python',
-      stars: 0,
-      forks: 0,
-      updated: '2023-08-11'
-    },
-    {
-      repo: 'NodeJS-Tutorial',
-      link: 'https://github.com/pkamboj2000/NodeJS-Tutorial',
-      description: 'Learning Node.js fundamentals and building applications',
-      language: 'JavaScript',
-      stars: 0,
-      forks: 0,
-      updated: '2023-08-11'
-    },
-    {
-      repo: 'React-JS',
-      link: 'https://github.com/pkamboj2000/React-JS',
-      description: 'React.js projects and learning materials',
-      language: 'JavaScript',
-      stars: 0,
-      forks: 0,
-      updated: '2023-08-11'
-    },
-    {
-      repo: 'pkamboj2000.github.io',
-      link: 'https://github.com/pkamboj2000/pkamboj2000.github.io',
-      description: 'My personal portfolio website',
-      language: 'JavaScript',
-      stars: 0,
-      forks: 0,
-      updated: '2023-08-11'
-    }
-  ];
-  return projects;
-  // Get all repos and sort by recently updated
-  return repos
-    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-    .map(repo => ({
-      repo: repo.name,
-      link: repo.html_url,
-      description: repo.description,
-      language: repo.language,
-      stars: repo.stargazers_count,
-      forks: repo.forks_count,
-      updated: new Date(repo.updated_at).toLocaleDateString(),
-      homepage: repo.homepage
-    }));
-}
-
-function renderAbout(profile) {
-  document.getElementById('about').innerHTML = `
-    <h2>About Me</h2>
-    <div class="flex items-center space-x-4">
-      <img src="${profile.avatar_url}" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-blue-400" />
-      <div>
-        <p class="text-lg font-semibold">${profile.name || profile.login}</p>
-        <p>Masters in Computer Science at University of Texas at Arlington</p>
-        <p>${profile.bio || ''}</p>
-        <a href="${profile.html_url}" class="text-blue-500 underline" target="_blank">GitHub Profile</a>
-      </div>
-    </div>
-  `;
-}
-
-function renderProjects(repos) {
-  let html = '<h2>Projects</h2><div class="grid md:grid-cols-2 gap-6">';
-  repos.forEach(repo => {
-    html += `
-      <div class="project-card">
-        <h3 class="text-xl font-bold mb-2">
-          <a href="${repo.link}" target="_blank" class="hover:underline">${repo.repo.replace(/-/g, ' ')}</a>
-        </h3>
-        <p class="mb-2">${repo.description || 'A GitHub repository'}</p>
-        <div class="flex flex-wrap items-center mb-2">
-          ${(repo.language ? `<span class="skill-badge">${repo.language}</span>` : '')}
-        </div>
-        <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400">
-          <span class="mr-4">★ ${repo.stars}</span>
-          <span class="mr-4">🔄 ${repo.forks}</span>
-          <span class="mr-4">📅 ${repo.updated}</span>
-          ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="text-green-500 mr-4">Live Demo</a>` : ''}
-          <a href="${repo.link}" target="_blank" class="text-blue-500">View Code</a>
-        </div>
-      </div>
-    `;
-  });
-  html += '</div>';
-  document.getElementById('projects').innerHTML = html;
-}
-
-function renderSkills(repos) {
-  const skills = new Set([
-    'Python',
-    'Django',
-    'JavaScript',
-    'React',
-    'Node.js',
-    'HTML',
-    'CSS',
-    'Git',
-    'SQL',
-    'REST API'
-  ]);
-  let html = '<h2>Skills</h2><div class="flex flex-wrap gap-2">';
-  Array.from(skills).sort().forEach(skill => {
-    html += `<span class="skill-badge">${skill}</span>`;
-  });
-  html += '</div>';
-  document.getElementById('skills').innerHTML = html;
-  Array.from(skills).sort().forEach(skill => {
-    html += `<span class="skill-badge">${skill}</span>`;
-  });
-  html += '</div>';
-  document.getElementById('skills').innerHTML = html;
-}
-
-function renderContact(profile) {
-  document.getElementById('contact').innerHTML = `
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: <a href="mailto:${profile.email || ''}" class="text-blue-500">${profile.email || 'Not public'}</a></li>
-      <li>Location: ${profile.location || 'N/A'}</li>
-      <li>GitHub: <a href="${profile.html_url}" class="text-blue-500" target="_blank">${profile.login}</a></li>
-    </ul>
-  `;
-}
-
-function setupThemeToggle() {
-  const btn = document.getElementById('theme-toggle');
-  btn.onclick = () => {
-    const html = document.documentElement;
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    document.body.classList.toggle('dark', !isDark);
-  };
-}
-
-async function main() {
-  try {
-    const [profile, repos] = await Promise.all([
-      fetchProfile(),
-      fetchRepos()
-    ]);
-    renderAbout(profile);
-    renderProjects(repos);
-    renderSkills(repos);
-    renderContact(profile);
-    setupThemeToggle();
-  } catch (error) {
-    console.error('Error in main:', error);
-  }
-}
-
-// Start the application
-document.addEventListener('DOMContentLoaded', () => {
-  main().catch(console.error);
-});
-  renderAbout(profile);
-  renderProjects(repos);
-  renderSkills(repos);
-  renderContact(profile);
-  setupThemeToggle();
-}
-
-main();
