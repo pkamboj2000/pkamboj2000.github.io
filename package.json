@@ -1,0 +1,9 @@
+{
+  "name": "pkamboj2000.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio site generated from GitHub profile.",
+  "main": "index.html",
+  "scripts": {},
+  "author": "Pranjal Kamboj",
+  "license": "MIT"
+}

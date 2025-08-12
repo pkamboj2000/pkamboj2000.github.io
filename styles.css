@@ -1,0 +1,18 @@
+/* Custom styles for dark mode toggle and section spacing */
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-6 transition-colors duration-300;
+}
+
+.skill-badge {
+  @apply inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm font-semibold mr-2 mb-2;
+}
