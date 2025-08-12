@@ -1,16 +1,60 @@
 // Fetch GitHub profile and pinned repos, then populate sections
 const GITHUB_USER = 'pkamboj2000';
-const PROFILE_API = `https://api.github.com/users/${GITHUB_USER}`;
-const REPOS_API = `https://api.github.com/users/${GITHUB_USER}/repos`;
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+const PROFILE_API = `${CORS_PROXY}https://api.github.com/users/${GITHUB_USER}`;
+const REPOS_API = `${CORS_PROXY}https://api.github.com/users/${GITHUB_USER}/repos`;
 
 async function fetchProfile() {
-  const res = await fetch(PROFILE_API);
-  return res.json();
+  try {
+    const res = await fetch(PROFILE_API);
+    if (!res.ok) throw new Error('Profile fetch failed');
+    return res.json();
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+    return {
+      name: 'Pranjal Kamboj',
+      login: 'pkamboj2000',
+      avatar_url: 'https://avatars.githubusercontent.com/u/pkamboj2000',
+      bio: '',
+      location: 'Arlington Texas',
+      html_url: 'https://github.com/pkamboj2000'
+    };
+  }
 }
 
 async function fetchRepos() {
-  const res = await fetch(REPOS_API);
-  const repos = await res.json();
+  try {
+    const res = await fetch(REPOS_API);
+    if (!res.ok) throw new Error('Repos fetch failed');
+    const repos = await res.json();
+    // Sort by recently updated
+    return repos
+      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+      .map(repo => ({
+        repo: repo.name,
+        link: repo.html_url,
+        description: repo.description,
+        language: repo.language,
+        stars: repo.stargazers_count,
+        forks: repo.forks_count,
+        updated: new Date(repo.updated_at).toLocaleDateString(),
+        homepage: repo.homepage
+      }));
+  } catch (error) {
+    console.error('Error fetching repos:', error);
+    return [
+      {
+        repo: 'pkamboj2000.github.io',
+        link: 'https://github.com/pkamboj2000/pkamboj2000.github.io',
+        description: 'My portfolio website',
+        language: 'JavaScript',
+        stars: 0,
+        forks: 0,
+        updated: new Date().toLocaleDateString(),
+        homepage: 'https://pkamboj2000.github.io'
+      }
+    ];
+  }
   // Get all repos and sort by recently updated
   return repos
     .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
