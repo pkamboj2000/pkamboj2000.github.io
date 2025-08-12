@@ -1,18 +1,125 @@
 // Fetch GitHub profile and pinned repos, then populate sections
-const GITHUB_USER = 'pkamboj2000';
+// Initialize when DOM is loaded
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function() {
+    // Update About section
+    document.querySelector('#about').innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+            <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Profile" class="w-32 h-32 rounded-full">
+            <div>
+                <h3 class="text-xl font-semibold">Pranjal Kamboj</h3>
+                <p class="text-lg mb-2">Masters in Computer Science at University of Texas at Arlington</p>
+                <p class="mb-2">Location: Arlington, Texas</p>
+                <a href="https://github.com/pkamboj2000" class="text-blue-500 hover:underline" target="_blank">GitHub Profile</a>
+            </div>
+        </div>
+    `;
 
-async function fetchProfile() {
-  return {
-    name: 'Pranjal Kamboj',
-    login: 'pkamboj2000',
-    avatar_url: 'https://avatars.githubusercontent.com/u/pkamboj2000',
-    bio: 'Masters in Computer Science Student',
-    location: 'Arlington Texas',
-    html_url: 'https://github.com/pkamboj2000'
-  };
-}
+    // Project list
+    const projects = [
+        {
+            name: 'Django Fundamentals',
+            description: 'Learning Django Framework basics and building web applications',
+            tech: 'Python, Django',
+            link: 'https://github.com/pkamboj2000/Django-Fundamentals'
+        },
+        {
+            name: 'E-commerce Website',
+            description: 'Full-featured e-commerce platform built with Django',
+            tech: 'Python, Django, HTML, CSS',
+            link: 'https://github.com/pkamboj2000/E-commerce-Website'
+        },
+        {
+            name: 'Python Basics',
+            description: 'Python programming fundamentals and exercises',
+            tech: 'Python',
+            link: 'https://github.com/pkamboj2000/python_basics'
+        },
+        {
+            name: 'NodeJS Tutorial',
+            description: 'Learning Node.js and building backend applications',
+            tech: 'JavaScript, Node.js',
+            link: 'https://github.com/pkamboj2000/NodeJS-Tutorial'
+        },
+        {
+            name: 'React Projects',
+            description: 'Collection of React.js projects and components',
+            tech: 'JavaScript, React',
+            link: 'https://github.com/pkamboj2000/React-JS'
+        }
+    ];
 
-async function fetchRepos() {
+    // All skills from projects
+    const skills = [
+        'Python', 'Django', 'JavaScript', 'Node.js', 'React',
+        'HTML', 'CSS', 'Git', 'SQL', 'REST API'
+    ];
+
+    // Update About section
+    document.getElementById('about').innerHTML = `
+        <h2>About Me</h2>
+        <div class="flex items-center space-x-4">
+            <div>
+                <p class="text-lg font-semibold">${profile.name}</p>
+                <p>${profile.title}</p>
+                <p>Location: ${profile.location}</p>
+                <a href="${profile.github}" class="text-blue-500 underline" target="_blank">GitHub Profile</a>
+            </div>
+        </div>
+    `;
+
+    // Update Skills section
+    document.getElementById('skills').innerHTML = `
+        <h2>Skills</h2>
+        <div class="flex flex-wrap gap-2">
+            ${skills.map(skill => `<span class="skill-badge">${skill}</span>`).join('')}
+        </div>
+    `;
+
+    // Update Projects section
+    document.getElementById('projects').innerHTML = `
+        <h2>Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            ${projects.map(project => `
+                <div class="project-card">
+                    <h3 class="text-xl font-bold mb-2">
+                        <a href="${project.link}" target="_blank" class="hover:underline">${project.name}</a>
+                    </h3>
+                    <p class="mb-2">${project.description}</p>
+                    <div class="flex flex-wrap items-center mb-2">
+                        ${project.tech.split(', ').map(tech => 
+                            `<span class="skill-badge">${tech}</span>`
+                        ).join('')}
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <a href="${project.link}" target="_blank" class="text-blue-500">View Project →</a>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+    // Update Contact section
+    document.getElementById('contact').innerHTML = `
+        <h2>Contact</h2>
+        <div>
+            <p>Location: ${profile.location}</p>
+            <p>GitHub: <a href="${profile.github}" class="text-blue-500" target="_blank">pkamboj2000</a></p>
+        </div>
+    `;
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', function() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        document.body.classList.toggle('dark', !isDark);
+    });
+});
+    
+    const myProjects = [
   const projects = [
     {
       repo: 'Django-Fundamentals',

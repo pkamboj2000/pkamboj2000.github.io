@@ -1,40 +1,72 @@
-/* Custom styles for dark mode toggle and section spacing */
+/* Base styles */
 body {
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-section h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+/* Dark mode styles */
+[data-theme="dark"] {
+  background-color: #1a202c;
+  color: #f7fafc;
 }
 
+/* Project cards */
 .project-card {
   background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.3s;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .project-card {
-  background-color: #1f2937;
+  background-color: #2d3748;
 }
 
+/* Skill badges */
 .skill-badge {
   display: inline-block;
-  background-color: #dbeafe;
-  color: #1e40af;
-  padding: 0.25rem 0.75rem;
+  background-color: #ebf5ff;
+  color: #2b6cb0;
+  padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 [data-theme="dark"] .skill-badge {
-  background-color: #1e40af;
-  color: #dbeafe;
+  background-color: #2b6cb0;
+  color: #ebf5ff;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+[data-theme="dark"] #theme-toggle {
+  background-color: #4a5568;
+  color: #f7fafc;
+}
+
+/* Links */
+a {
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #3182ce;
+}
+
+[data-theme="dark"] a:hover {
+  color: #63b3ed;
 }
