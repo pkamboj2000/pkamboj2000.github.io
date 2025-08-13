@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranjal Kamboj - Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Pranjal Kamboj - Machine Learning Engineer | AI Developer | Available for Hire</title>
+    <meta name="description" content="Experienced Machine Learning Engineer specializing in LLMs, Multi-Agent Systems, and Production AI. Masters in CS from UTA. 11+ ML projects. Available for immediate hire.">
+    <meta name="keywords" content="Machine Learning Engineer, AI Developer, LLMs, PyTorch, LangChain, CrewAI, Fine-tuning, RAG, Computer Vision, NLP, Python, Data Science, Available for Hire">
+    <meta name="author" content="Pranjal Kamboj">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pranjal Kamboj - Machine Learning Engineer | Available for Hire">
+    <meta property="og:description" content="Experienced ML Engineer with expertise in LLMs, Multi-Agent Systems. Masters in CS. 11+ production ML projects. Seeking new opportunities.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/pkamboj2000">
+    <meta property="og:url" content="https://pkamboj2000.github.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pranjal Kamboj - Machine Learning Engineer">
+    <meta name="twitter:description" content="ML Engineer specializing in LLMs and AI systems. Available for hire.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/pkamboj2000">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pkamboj2000.github.io">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,6 +43,54 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="style.css" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pranjal Kamboj",
+        "jobTitle": "Machine Learning Engineer",
+        "description": "Experienced Machine Learning Engineer specializing in LLMs, Multi-Agent Systems, and Production AI",
+        "url": "https://pkamboj2000.github.io",
+        "image": "https://avatars.githubusercontent.com/pkamboj2000",
+        "email": "mailto:Pranjalkamboj2000@gmail.com",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "University of Texas at Arlington"
+        },
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Master of Science in Computer Science"
+        },
+        "knowsAbout": [
+            "Machine Learning",
+            "Artificial Intelligence", 
+            "Large Language Models",
+            "PyTorch",
+            "LangChain",
+            "Computer Vision",
+            "Natural Language Processing",
+            "Python Programming",
+            "Deep Learning"
+        ],
+        "sameAs": [
+            "https://linkedin.com/in/pranjalkamboj",
+            "https://github.com/pkamboj2000"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Arlington",
+            "addressRegion": "Texas",
+            "addressCountry": "US"
+        },
+        "seeks": {
+            "@type": "JobPosting",
+            "title": "Machine Learning Engineer Position",
+            "description": "Seeking opportunities in Machine Learning, AI Engineering, or Data Science roles"
+        }
+    }
+    </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
     <!-- Navigation -->
@@ -31,7 +102,9 @@
                     <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
                     <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
                     <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="#resume" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Resume</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+                    <a href="mailto:Pranjalkamboj2000@gmail.com" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Hire Me</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
                     <i class="fas fa-bars text-xl"></i>
@@ -42,7 +115,9 @@
                 <a href="#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
                 <a href="#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
                 <a href="#skills" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                <a href="#resume" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Resume</a>
                 <a href="#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+                <a href="mailto:Pranjalkamboj2000@gmail.com" class="block py-2 text-blue-600 font-semibold">Hire Me</a>
             </div>
         </div>
     </nav>
@@ -57,49 +132,174 @@
         <div class="container mx-auto px-4 text-center">
             <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
             <h1 class="text-5xl font-bold mb-4">Pranjal Kamboj</h1>
-            <p class="text-2xl mb-6">Machine Learning Engineer | AI Developer</p>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">Passionate about creating intelligent systems that solve real-world problems</p>
+            <p class="text-2xl mb-4">Machine Learning Engineer | AI Developer</p>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-6 max-w-4xl mx-auto">
+                <p class="text-lg mb-2">🎯 <strong>ACTIVELY SEEKING ML OPPORTUNITIES</strong></p>
+                <p class="text-base">Specializing in LLMs, Multi-Agent Systems, and Production AI | Open to Remote & Relocation</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">2+ Years Experience</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Masters in CS (UTA)</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Available Immediately</span>
+            </div>
             <div class="flex justify-center space-x-6">
-                <a href="https://linkedin.com/in/pranjalkamboj" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+                <a href="https://linkedin.com/in/pranjalkamboj" target="_blank" class="text-white hover:text-blue-200 transition-colors" title="LinkedIn Profile">
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
-                <a href="https://github.com/pkamboj2000" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+                <a href="https://github.com/pkamboj2000" target="_blank" class="text-white hover:text-blue-200 transition-colors" title="GitHub Portfolio">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
-                <a href="mailto:Pranjalkamboj2000@gmail.com" class="text-white hover:text-blue-200 transition-colors">
+                <a href="mailto:Pranjalkamboj2000@gmail.com" class="text-white hover:text-blue-200 transition-colors" title="Email Me">
                     <i class="fas fa-envelope fa-2x"></i>
+                </a>
+                <a href="#resume" class="text-white hover:text-blue-200 transition-colors" title="Download Resume">
+                    <i class="fas fa-file-download fa-2x"></i>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-50 dark:bg-gray-900">
+    <!-- Value Proposition Section -->
+    <section class="py-16 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
-                <div class="md:w-1/3">
-                    <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" class="w-48 h-48 rounded-full mx-auto border-4 border-blue-500">
+            <h2 class="text-3xl font-bold text-center mb-8">Why Hire Me? 🚀</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Production-Ready AI</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Built and deployed 11+ ML projects with real-world impact. Experience with LLMs, multi-agent systems, and end-to-end pipelines.</p>
                 </div>
-                <div class="md:w-2/3 text-center md:text-left">
-                    <h3 class="text-2xl font-semibold mb-4">Masters in Computer Science</h3>
-                    <p class="text-lg mb-4">University of Texas at Arlington</p>
-                    <p class="text-lg mb-4">📍 Arlington, Texas</p>
-                    <p class="text-lg">
-                        I am a passionate Machine Learning Engineer with expertise in developing AI solutions, 
-                        multi-agent systems, and advanced deep learning models. My focus is on creating efficient 
-                        and scalable ML solutions using cutting-edge technologies like LangChain, CrewAI, and 
-                        modern LLMs.
-                    </p>
+                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cutting-Edge Skills</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Expert in latest AI technologies: LangChain, CrewAI, RAG, Fine-tuning LLMs, PyTorch, and modern MLOps practices.</p>
+                </div>
+                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ready to Start</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Available immediately. Strong academic background (Masters in CS) + practical experience. Open to remote work and relocation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Professional Profile</h2>
+            <div class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                <div class="lg:w-1/3">
+                    <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" class="w-64 h-64 rounded-lg mx-auto border-4 border-blue-500 shadow-lg">
+                    <div class="text-center mt-6">
+                        <div class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full inline-block mb-3">
+                            ✅ Available for Hire
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Open to: Full-time, Contract, Remote</p>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-blue-600 mb-2">🎓 Education</h4>
+                            <p class="font-semibold">Masters in Computer Science</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">University of Texas at Arlington</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-blue-600 mb-2">📍 Location</h4>
+                            <p class="font-semibold">Arlington, Texas</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Open to relocation & remote work</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-blue-600 mb-2">🔥 Specialization</h4>
+                            <p class="font-semibold">LLMs & Multi-Agent Systems</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Fine-tuning, RAG, Production AI</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-blue-600 mb-2">💼 Experience</h4>
+                            <p class="font-semibold">11+ ML Projects</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">From research to production</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg mb-3">🎯 What I Bring to Your Team:</h4>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>✓ <strong>End-to-end ML Pipeline Development</strong> - From data preprocessing to model deployment</li>
+                            <li>✓ <strong>Modern AI Stack Expertise</strong> - LangChain, CrewAI, Transformers, PyTorch</li>
+                            <li>✓ <strong>LLM Fine-tuning & Optimization</strong> - QLoRA, efficient training techniques</li>
+                            <li>✓ <strong>Multi-Agent System Design</strong> - Complex AI workflows and automation</li>
+                            <li>✓ <strong>Production ML Deployment</strong> - FastAPI, scalable architectures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Impact & Achievements 📊</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <div class="text-center bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">11+</div>
+                    <div class="text-gray-600 dark:text-gray-400">ML Projects</div>
+                    <div class="text-sm text-gray-500 mt-1">Production Ready</div>
+                </div>
+                <div class="text-center bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-green-600 mb-2">5+</div>
+                    <div class="text-gray-600 dark:text-gray-400">AI Frameworks</div>
+                    <div class="text-sm text-gray-500 mt-1">Expert Level</div>
+                </div>
+                <div class="text-center bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">2+</div>
+                    <div class="text-gray-600 dark:text-gray-400">Years Experience</div>
+                    <div class="text-sm text-gray-500 mt-1">Hands-on ML</div>
+                </div>
+                <div class="text-center bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-red-600 mb-2">100%</div>
+                    <div class="text-gray-600 dark:text-gray-400">Availability</div>
+                    <div class="text-sm text-gray-500 mt-1">Ready to Start</div>
+                </div>
+            </div>
+            
+            <!-- Technical Highlights -->
+            <div class="mt-12 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-center mb-6">🔥 Technical Highlights</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+                        <h4 class="font-bold text-lg mb-3 text-blue-600">🤖 LLM & AI Expertise</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Fine-tuned LLaMA 2 with QLoRA (4-bit quantization)</li>
+                            <li>• Built production RAG pipelines with LangChain</li>
+                            <li>• Developed multi-agent systems using CrewAI</li>
+                            <li>• Implemented custom transformer architectures</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+                        <h4 class="font-bold text-lg mb-3 text-green-600">📈 Real-World Impact</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Built automated car review generation system</li>
+                            <li>• Developed medical image analysis for cataract detection</li>
+                            <li>• Created air quality prediction models with LSTM</li>
+                            <li>• Implemented plant disease detection using CNNs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
     <section id="projects" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Featured Projects</h2>
+            <h2 class="text-3xl font-bold text-center mb-8">Featured Projects 🚀</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
@@ -252,29 +452,156 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16">
+    <!-- Resume Section -->
+    <section id="resume" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Get In Touch</h2>
-            <div class="max-w-2xl mx-auto text-center">
-                <p class="text-lg mb-8">I'm always interested in discussing new opportunities, innovative projects, and collaborations in the field of AI and Machine Learning.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="mailto:Pranjalkamboj2000@gmail.com" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                        <i class="fas fa-envelope text-3xl text-red-500 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Email</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Pranjalkamboj2000@gmail.com</p>
-                    </a>
-                    <a href="https://linkedin.com/in/pranjalkamboj" target="_blank" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                        <i class="fab fa-linkedin text-3xl text-blue-600 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Connect with me</p>
-                    </a>
-                    <a href="https://github.com/pkamboj2000" target="_blank" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                        <i class="fab fa-github text-3xl text-gray-700 dark:text-gray-300 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">GitHub</h3>
-                        <p class="text-gray-600 dark:text-gray-400">View my code</p>
-                    </a>
+            <h2 class="text-3xl font-bold text-center mb-8">Resume & Experience</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Download Resume Card -->
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-8 mb-8 text-center">
+                    <i class="fas fa-file-pdf text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Download My Resume</h3>
+                    <p class="mb-6">Get my complete professional background, education, and project details</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:Pranjalkamboj2000@gmail.com?subject=Resume%20Request&body=Hi%20Pranjal,%0D%0A%0D%0AI%20would%20like%20to%20request%20your%20resume%20for%20a%20machine%20learning%20position.%0D%0A%0D%0AThank%20you!" 
+                           class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            📧 Request Resume via Email
+                        </a>
+                        <a href="https://linkedin.com/in/pranjalkamboj" target="_blank"
+                           class="bg-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors">
+                            💼 View LinkedIn Profile
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Quick Experience Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-bold mb-4 text-blue-600">🚀 Key Achievements</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Built 11+ production-ready ML projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Fine-tuned LLaMA 2 with QLoRA techniques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Developed multi-agent AI systems using CrewAI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Implemented RAG pipelines for enterprise applications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Expert in modern MLOps and deployment practices</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-bold mb-4 text-blue-600">🎯 Job Preferences</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <strong>Preferred Roles:</strong>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Machine Learning Engineer, AI Engineer, Data Scientist, ML Research Engineer</p>
+                            </div>
+                            <div>
+                                <strong>Work Type:</strong>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Full-time, Contract, Remote, Hybrid</p>
+                            </div>
+                            <div>
+                                <strong>Industries:</strong>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Tech, AI/ML, FinTech, Healthcare, Startups</p>
+                            </div>
+                            <div>
+                                <strong>Availability:</strong>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-sm">Immediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Let's Work Together! 🤝</h2>
+            <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                Ready to contribute to your ML team immediately. Open to discussing opportunities, technical challenges, and how I can add value to your organization.
+            </p>
+            
+            <!-- Quick Contact Actions -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg p-6 text-center mb-8">
+                    <h3 class="text-xl font-bold mb-2">🔥 Available for Immediate Start</h3>
+                    <p class="mb-4">Looking for Machine Learning Engineer positions • Remote/Hybrid/On-site</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:Pranjalkamboj2000@gmail.com?subject=ML%20Job%20Opportunity&body=Hi%20Pranjal,%0D%0A%0D%0AI%20have%20a%20machine%20learning%20opportunity%20that%20might%20interest%20you.%0D%0A%0D%0APosition:%20%0D%0ACompany:%20%0D%0ALocation:%20%0D%0A%0D%0ALet's%20schedule%20a%20call!%0D%0A%0D%0ABest%20regards" 
+                           class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            📞 Schedule Interview
+                        </a>
+                        <a href="tel:+1234567890" class="bg-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors">
+                            📱 Call Directly
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="mailto:Pranjalkamboj2000@gmail.com" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Pranjalkamboj2000@gmail.com</p>
+                    <span class="text-sm text-blue-600">Response within 24 hours</span>
+                </a>
+                
+                <a href="https://linkedin.com/in/pranjalkamboj" target="_blank" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-linkedin text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Professional Network</p>
+                    <span class="text-sm text-blue-600">Connect & Message</span>
+                </a>
+                
+                <a href="https://github.com/pkamboj2000" target="_blank" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow text-center group">
+                    <div class="w-16 h-16 bg-gray-700 dark:bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-github text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Code Portfolio</p>
+                    <span class="text-sm text-blue-600">View Projects</span>
+                </a>
+            </div>
+
+            <!-- Recruiter Information -->
+            <div class="max-w-3xl mx-auto mt-12 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                <h4 class="text-lg font-bold text-center mb-4">👔 For Recruiters & Hiring Managers</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <strong>Salary Expectation:</strong> Competitive market rate
+                    </div>
+                    <div>
+                        <strong>Notice Period:</strong> Available immediately
+                    </div>
+                    <div>
+                        <strong>Work Authorization:</strong> Please inquire
+                    </div>
+                    <div>
+                        <strong>Relocation:</strong> Open to opportunities
+                    </div>
+                </div>
+                <p class="text-center mt-4 text-gray-600 dark:text-gray-400">
+                    <em>Feel free to reach out for technical discussions, coding challenges, or to schedule an interview!</em>
+                </p>
             </div>
         </div>
     </section>
