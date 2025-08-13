@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranjal Kamboj - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">PK</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#skills" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                <a href="#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed bottom-4 right-4 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow z-40">
+        <i id="theme-toggle-icon" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
+    </button>
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4">Pranjal Kamboj</h1>
+            <p class="text-2xl mb-6">Machine Learning Engineer | AI Developer</p>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Passionate about creating intelligent systems that solve real-world problems</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://linkedin.com/in/pranjalkamboj" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/pkamboj2000" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="mailto:Pranjalkamboj2000@gmail.com" class="text-white hover:text-blue-200 transition-colors">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
+                <div class="md:w-1/3">
+                    <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" class="w-48 h-48 rounded-full mx-auto border-4 border-blue-500">
+                </div>
+                <div class="md:w-2/3 text-center md:text-left">
+                    <h3 class="text-2xl font-semibold mb-4">Masters in Computer Science</h3>
+                    <p class="text-lg mb-4">University of Texas at Arlington</p>
+                    <p class="text-lg mb-4">📍 Arlington, Texas</p>
+                    <p class="text-lg">
+                        I am a passionate Machine Learning Engineer with expertise in developing AI solutions, 
+                        multi-agent systems, and advanced deep learning models. My focus is on creating efficient 
+                        and scalable ML solutions using cutting-edge technologies like LangChain, CrewAI, and 
+                        modern LLMs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3">Multi-Agent Car Review System</h3>
+                    <p class="mb-4">A multi-agent system built with CrewAI that produces unbiased automotive reviews through parallel information gathering and sequential synthesis.</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mr-2 mb-2">CrewAI</span>
+                        <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mr-2 mb-2">LangChain</span>
+                    </div>
+                    <a href="https://github.com/pkamboj2000/Multi-agent-parallel-workflows-using-CrewAI" target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                        View Project <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3">Fine-Tuning LLaMA 2 with QLoRA</h3>
+                    <p class="mb-4">Fine-tuned LLaMA 2 using QLoRA on the Alpaca dataset with 4-bit quantization for efficient model adaptation.</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded mr-2 mb-2">PyTorch</span>
+                        <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded mr-2 mb-2">Transformers</span>
+                    </div>
+                    <a href="https://github.com/pkamboj2000/Fine-tuning-Lora-Qlora" target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                        View Project <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3">Model Context Protocol</h3>
+                    <p class="mb-4">An intelligent university information assistant using LangChain MCP Agent for enhanced information retrieval.</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded mr-2 mb-2">LangChain</span>
+                        <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded mr-2 mb-2">FastAPI</span>
+                    </div>
+                    <a href="https://github.com/pkamboj2000/Model-context-protocol" target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                        View Project <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3">AI Career Planner</h3>
+                    <p class="mb-4">Autonomous agent for extracting job-relevant skills using LangChain and OpenAI for career development insights.</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded mr-2 mb-2">LangChain</span>
+                        <span class="inline-block bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded mr-2 mb-2">OpenAI</span>
+                    </div>
+                    <a href="https://github.com/pkamboj2000/AI-career-planner" target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                        View Project <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3">RAG Pipeline</h3>
+                    <p class="mb-4">LangChain-based RAG pipeline for document processing with advanced retrieval and generation capabilities.</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs px-2 py-1 rounded mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs px-2 py-1 rounded mr-2 mb-2">LangChain</span>
+                        <span class="inline-block bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs px-2 py-1 rounded mr-2 mb-2">RAG</span>
+                    </div>
+                    <a href="https://github.com/pkamboj2000/RAG-pipeline" target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                        View Project <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 project-card hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3">MCP Tools and Agents</h3>
+                    <p class="mb-4">Weather-aware AI agent system using Model Context Protocol for enhanced environmental data processing.</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs px-2 py-1 rounded mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs px-2 py-1 rounded mr-2 mb-2">MCP</span>
+                        <span class="inline-block bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs px-2 py-1 rounded mr-2 mb-2">FastAPI</span>
+                    </div>
+                    <a href="https://github.com/pkamboj2000/MCP-tools-and-agents" target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                        View Project <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div class="text-center mt-8">
+                <a href="https://github.com/pkamboj2000" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors">
+                    View All Projects on GitHub <i class="fab fa-github ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Technical Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fab fa-python text-3xl text-blue-500 mb-2"></i>
+                    <div>Python</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-brain text-3xl text-green-500 mb-2"></i>
+                    <div>Machine Learning</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-network-wired text-3xl text-purple-500 mb-2"></i>
+                    <div>Deep Learning</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-fire text-3xl text-orange-500 mb-2"></i>
+                    <div>PyTorch</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-project-diagram text-3xl text-blue-600 mb-2"></i>
+                    <div>TensorFlow</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-eye text-3xl text-indigo-500 mb-2"></i>
+                    <div>Computer Vision</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-comments text-3xl text-teal-500 mb-2"></i>
+                    <div>NLP</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-link text-3xl text-yellow-500 mb-2"></i>
+                    <div>LangChain</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-users text-3xl text-red-500 mb-2"></i>
+                    <div>CrewAI</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-rocket text-3xl text-pink-500 mb-2"></i>
+                    <div>FastAPI</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-robot text-3xl text-gray-600 mb-2"></i>
+                    <div>LLMs</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow skill-item hover:shadow-lg transition-shadow">
+                    <i class="fas fa-search text-3xl text-cyan-500 mb-2"></i>
+                    <div>RAG</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-lg mb-8">I'm always interested in discussing new opportunities, innovative projects, and collaborations in the field of AI and Machine Learning.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="mailto:Pranjalkamboj2000@gmail.com" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <i class="fas fa-envelope text-3xl text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Email</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Pranjalkamboj2000@gmail.com</p>
+                    </a>
+                    <a href="https://linkedin.com/in/pranjalkamboj" target="_blank" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <i class="fab fa-linkedin text-3xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Connect with me</p>
+                    </a>
+                    <a href="https://github.com/pkamboj2000" target="_blank" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <i class="fab fa-github text-3xl text-gray-700 dark:text-gray-300 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                        <p class="text-gray-600 dark:text-gray-400">View my code</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2024 Pranjal Kamboj. All rights reserved.</p>
+            <p class="text-gray-400">Built with ❤️ using Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
