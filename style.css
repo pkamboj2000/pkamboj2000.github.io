@@ -23,15 +23,13 @@
     }
 }
 
-/* Base styles */
+/* Base styles - Dark Theme Default */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-}
-
-.dark {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --bg-secondary: #1e293b;
+    --text-secondary: #e2e8f0;
+    --accent-color: #3b82f6;
 }
 
 html {
@@ -42,6 +40,72 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+}
+
+/* Force dark theme classes */
+.bg-white {
+    background-color: #1e293b !important;
+}
+
+.bg-gray-50 {
+    background-color: #0f172a !important;
+}
+
+.bg-gray-100 {
+    background-color: #1e293b !important;
+}
+
+.bg-gray-900 {
+    background-color: #0f172a !important;
+}
+
+.text-gray-900 {
+    color: #f8fafc !important;
+}
+
+.text-gray-700 {
+    color: #e2e8f0 !important;
+}
+
+.text-gray-600 {
+    color: #cbd5e1 !important;
+}
+
+.text-gray-300 {
+    color: #94a3b8 !important;
+}
+
+.border-gray-200 {
+    border-color: #334155 !important;
+}
+
+.border-gray-700 {
+    border-color: #475569 !important;
+}
+
+/* Dark theme skill badges and cards */
+.bg-blue-50, .bg-green-50, .bg-purple-50, .bg-red-50, .bg-yellow-50, .bg-indigo-50 {
+    background-color: #1e293b !important;
+}
+
+.bg-blue-100, .bg-green-100, .bg-purple-100, .bg-red-100, .bg-yellow-100, .bg-indigo-100, .bg-teal-100, .bg-orange-100, .bg-pink-100 {
+    background-color: #334155 !important;
+}
+
+/* Dark navigation */
+nav {
+    background-color: #0f172a !important;
+    border-bottom: 1px solid #334155 !important;
+}
+
+/* Dark cards and sections */
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark gradient backgrounds */
+.bg-gradient-to-r {
+    background: linear-gradient(to right, #1e293b, #334155) !important;
 }
 
 /* Project card animations */
@@ -117,33 +181,21 @@ nav {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Dark Theme */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #1e293b;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #475569;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.dark ::-webkit-scrollbar-track {
-    background: #2d3748;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    background: #4a5568;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-    background: #718096;
+    background: #64748b;
 }
