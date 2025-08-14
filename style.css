@@ -30,15 +30,16 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: #0f172a !important;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Force dark theme classes */
+/* Force dark theme classes - Critical for GitHub Pages */
 .bg-white {
     background-color: #1e293b !important;
 }
@@ -102,6 +103,15 @@ nav {
 /* Dark gradient backgrounds */
 .bg-gradient-to-r {
     background: linear-gradient(to right, #1e293b, #334155) !important;
+}
+
+.bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #2563eb, #7c3aed) !important;
+}
+
+/* Ensure hero section gradient works */
+.bg-gradient-to-br.from-blue-600.to-purple-700 {
+    background: linear-gradient(to bottom right, #2563eb, #7c3aed) !important;
 }
 
 /* Project card animations */
