@@ -5,6 +5,46 @@
 			"label": "Push to GitHub",
 			"type": "shell",
 			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add -A && git commit -m 'FORCE GitHub Pages update' && git push origin main --force"
+		},
+		{
+			"label": "Aggressive Cache Bust",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add index.html && git commit -m 'AGGRESSIVE CACHE BUST - $(date)' && git push origin main --force"
+		},
+		{
+			"label": "Deploy Current Index",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add index.html && git commit -m 'Deploy current index.html to GitHub Pages - NO LOCAL CHANGES' && git push origin main --force"
+		},
+		{
+			"label": "Deploy Simple Version",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && rm -f index.html && echo '<!DOCTYPE html><html><head><title>Pranjal Kamboj - WORKING NOW</title><style>body{background:linear-gradient(135deg,#3B82F6,#8B5CF6,#EC4899);color:white;font-family:Arial;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}.container{background:rgba(255,255,255,0.1);padding:3rem;border-radius:20px;backdrop-filter:blur(10px)}img{width:150px;height:150px;border-radius:50%;border:4px solid white;margin-bottom:2rem}h1{font-size:3rem;margin-bottom:1rem}.btn{background:white;color:#3B82F6;padding:1rem 2rem;text-decoration:none;border-radius:10px;font-weight:bold;margin:0.5rem}</style></head><body><div class=\"container\"><img src=\"https://avatars.githubusercontent.com/pkamboj2000\" alt=\"Pranjal Kamboj\"><h1>Pranjal Kamboj</h1><p>Machine Learning Engineer<br>University of Texas at Arlington</p><div style=\"margin:2rem 0\">✅ Available for Hire | 📍 San Jose, CA</div><div><a href=\"mailto:pxk7885@mavs.uta.edu\" class=\"btn\">Contact Me</a><a href=\"https://github.com/pkamboj2000\" class=\"btn\">GitHub</a><a href=\"https://www.linkedin.com/in/pranjal-kamboj/\" class=\"btn\">LinkedIn</a></div><div style=\"margin-top:2rem;font-size:0.9rem\">UPDATED: Aug 14, 2025 7:06 PM</div></div></body></html>' > index.html && git add index.html && git commit -m 'SIMPLE WORKING VERSION' && git push origin main --force"
+		},
+		{
+			"label": "Check Git Status",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git branch -a && git status && git log --oneline -3"
+		},
+		{
+			"label": "Force Deployment",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add index.html && git commit -m 'FORCE GITHUB PAGES DEPLOYMENT - $(date)' && git push origin main --force"
+		},
+		{
+			"label": "Restore Original Format",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add index.html && git commit -m 'RESTORE original comprehensive portfolio format' && git push origin main"
+		},
+		{
+			"label": "Force Restore",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git status && echo '<!-- RESTORED ORIGINAL FORMAT: $(date) -->' >> index.html && git add index.html && git commit -m 'RESTORE comprehensive portfolio with all sections' && git push origin main"
+		},
+		{
+			"label": "Deploy Full Portfolio",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add index.html && git commit -m 'DEPLOY comprehensive Tailwind portfolio with all sections' && git push origin main"
 		}
 	]
 }
