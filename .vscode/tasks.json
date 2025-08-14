@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Push to GitHub",
+			"type": "shell",
+			"command": "cd /Users/pranjalkamboj/Desktop/projects/pkamboj2000.github.io && git add -A && git commit -m 'FORCE GitHub Pages update' && git push origin main --force"
+		}
+	]
+}
