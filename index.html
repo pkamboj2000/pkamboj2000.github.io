@@ -1,92 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Pranjal Kamboj - ML Engineer</title>
-    <!-- CACHE BUSTER: 2025-08-14-17:00:00 -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranjal Kamboj Portfolio</title>
     <style>
-        /* FORCED STYLING - NO OVERRIDES ALLOWED */
-        * {
+        /* NUCLEAR RESET - FORCE EVERYTHING */
+        *, *::before, *::after {
             margin: 0 !important;
             padding: 0 !important;
             box-sizing: border-box !important;
         }
-        html, body {
-            background: linear-gradient(135deg, #2563eb, #7c3aed, #ec4899) !important;
-            color: white !important;
-            font-family: Arial, sans-serif !important;
-            text-align: center !important;
-            padding: 5rem 2rem !important;
+        
+        html {
+            height: 100% !important;
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 33%, #ec4899 66%, #f59e0b 100%) !important;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 33%, #ec4899 66%, #f59e0b 100%) !important;
+            color: #ffffff !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
             min-height: 100vh !important;
-            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 2rem !important;
+            overflow-x: hidden !important;
         }
-        h1 {
-            font-size: 4rem !important;
-            margin: 2rem 0 !important;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
-            color: white !important;
+        
+        .container {
+            max-width: 900px !important;
+            width: 100% !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(20px) !important;
+            border-radius: 30px !important;
+            padding: 4rem !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
         }
-        p {
-            font-size: 1.5rem !important;
-            margin: 1rem 0 !important;
-            color: white !important;
+        
+        .profile-section {
+            margin-bottom: 3rem !important;
         }
-        img {
+        
+        .profile-img {
             width: 200px !important;
             height: 200px !important;
             border-radius: 50% !important;
-            border: 5px solid white !important;
-            margin: 2rem !important;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+            border: 6px solid rgba(255, 255, 255, 0.8) !important;
+            margin: 0 auto 2rem auto !important;
             display: block !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+            transition: transform 0.3s ease !important;
         }
-        .btn {
-            background: white !important;
-            color: #2563eb !important;
-            padding: 1rem 2rem !important;
-            text-decoration: none !important;
-            border-radius: 10px !important;
-            margin: 0.5rem !important;
-            display: inline-block !important;
-            font-weight: bold !important;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+        
+        .profile-img:hover {
+            transform: scale(1.05) !important;
         }
-        .btn-github {
-            background: #374151 !important;
-            color: white !important;
+        
+        h1 {
+            font-size: 4rem !important;
+            font-weight: 900 !important;
+            margin-bottom: 1rem !important;
+            color: #ffffff !important;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5) !important;
+            letter-spacing: -2px !important;
         }
-        .btn-linkedin {
-            background: #0ea5e9 !important;
-            color: white !important;
+        
+        .title {
+            font-size: 2.2rem !important;
+            color: #f1f5f9 !important;
+            margin-bottom: 1rem !important;
+            font-weight: 600 !important;
         }
-        h2 {
-            color: white !important;
-            font-size: 2rem !important;
+        
+        .subtitle {
+            font-size: 1.4rem !important;
+            color: #e2e8f0 !important;
+            margin-bottom: 3rem !important;
+            line-height: 1.6 !important;
+        }
+        
+        .status-badges {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 1.5rem !important;
             margin: 2rem 0 !important;
+            flex-wrap: wrap !important;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.9) !important;
+            color: #1e40af !important;
+            padding: 0.8rem 1.8rem !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            font-size: 1rem !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .badge:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .badge.green {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            color: white !important;
+        }
+        
+        .stats {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+            gap: 2rem !important;
+            margin: 3rem 0 !important;
+        }
+        
+        .stat {
+            text-align: center !important;
+            padding: 1.5rem !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+            border-radius: 20px !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+        
+        .stat-number {
+            font-size: 3rem !important;
+            font-weight: 900 !important;
+            color: #fbbf24 !important;
+            display: block !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem !important;
+            color: #f1f5f9 !important;
+            margin-top: 0.5rem !important;
+        }
+        
+        .buttons {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 1.5rem !important;
+            margin-top: 3rem !important;
+            flex-wrap: wrap !important;
+        }
+        
+        .btn {
+            padding: 1.2rem 2.5rem !important;
+            border-radius: 15px !important;
+            text-decoration: none !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+            border: none !important;
+            cursor: pointer !important;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+            color: #1e40af !important;
+        }
+        
+        .btn-github {
+            background: linear-gradient(135deg, #374151, #1f2937) !important;
+            color: white !important;
+        }
+        
+        .btn-linkedin {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+            color: white !important;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem !important; }
+            .title { font-size: 1.8rem !important; }
+            .container { padding: 2rem !important; margin: 1rem !important; }
+            .buttons { flex-direction: column !important; align-items: center !important; }
         }
     </style>
 </head>
 <body>
-    <img src="https://avatars.githubusercontent.com/pkamboj2000?v=4" alt="Pranjal Kamboj">
-    <h1>Pranjal Kamboj</h1>
-    <p>Machine Learning Engineer</p>
-    <p>MS Computer Science - University of Texas at Arlington</p>
-    <p>🚀 Available for Hire | 📍 San Jose, CA</p>
-    
-    <div style="margin: 3rem 0;">
-        <a href="mailto:pxk7885@mavs.uta.edu" class="btn">📧 Contact Me</a>
-        <a href="https://github.com/pkamboj2000" target="_blank" class="btn btn-github">🔗 GitHub</a>
-        <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="btn btn-linkedin">💼 LinkedIn</a>
-    </div>
-    
-    <div style="margin-top: 4rem;">
-        <h2>About Me</h2>
-        <p style="max-width: 800px; margin: 0 auto; line-height: 1.6;">
-            Passionate ML Engineer specializing in LLMs, Multi-Agent Systems, and production AI. 
-            2+ years experience with 15+ AI projects. Expertise in PyTorch, LangChain, LangGraph, CrewAI.
-        </p>
+    <div class="container">
+        <div class="profile-section">
+            <img src="https://avatars.githubusercontent.com/pkamboj2000?v=4&s=400" alt="Pranjal Kamboj" class="profile-img">
+            <h1>Pranjal Kamboj</h1>
+            <div class="title">Machine Learning Engineer</div>
+            <div class="subtitle">MS Computer Science Graduate<br>University of Texas at Arlington</div>
+            
+            <div class="status-badges">
+                <div class="badge green">🚀 Available for Hire</div>
+                <div class="badge">📍 San Jose, CA</div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">2+</span>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <div class="stat-label">AI Projects</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">MS</span>
+                    <div class="stat-label">Computer Science</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="mailto:pxk7885@mavs.uta.edu" class="btn btn-primary">
+                📧 Contact Me
+            </a>
+            <a href="https://github.com/pkamboj2000" target="_blank" class="btn btn-github">
+                🔗 GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="btn btn-linkedin">
+                💼 LinkedIn
+            </a>
+        </div>
     </div>
 </body>
 </html>
