@@ -42,6 +42,7 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -123,9 +124,14 @@
                     <a href="#education" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Education</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <i id="theme-toggle-icon" class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <!-- Mobile Menu -->
@@ -746,5 +752,6 @@
             });
         });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

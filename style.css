@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Custom animations */
 @keyframes fadeInUp {
     from {
@@ -130,8 +126,17 @@ nav {
 
 /* Custom components */
 .skill-badge {
-    @apply px-4 py-2 rounded-full text-sm font-medium
-           bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+    padding: 1rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.dark .skill-badge {
+    background-color: #1e3a8a;
+    color: #93c5fd;
 }
 
 /* Header gradient animation */
