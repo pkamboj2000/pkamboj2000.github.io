@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Pranjal Kamboj - Machine Learning Engineer | AI Developer | Available for Hire</title>
+    <meta name="description" content="Experienced Machine Learning Engineer specializing in LLMs, Multi-Agent Systems, and Production AI. Masters in CS from UTA. Extensive ML project portfolio. Available for immediate hire.">
+    <meta name="keywords" content="Machine Learning Engineer, AI Developer, LLMs, PyTorch, LangChain, LangGraph, CrewAI, Model Context Protocol, Fine-tuning, RAG, Computer Vision, NLP, Python, Data Science, Available for Hire, Generative AI, MLOps, Vector Databases, FAISS, QLoRA, Quantization, Multi-Agent Systems, Prompt Engineering, Production AI, Groq, Transformers, Enterprise AI">
+    <meta name="author" content="Pranjal Kamboj">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pranjal Kamboj - Machine Learning Engineer | Available for Hire">
+    <meta property="og:description" content="Experienced ML Engineer with expertise in LLMs, Multi-Agent Systems. Masters in CS. Extensive production ML project portfolio. Seeking new opportunities.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/pkamboj2000">
+    <meta property="og:url" content="https://pkamboj2000.github.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pranjal Kamboj - Machine Learning Engineer">
+    <meta name="twitter:description" content="ML Engineer specializing in LLMs and AI systems. Available for hire.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/pkamboj2000">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pkamboj2000.github.io">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#0f172a',
+                            secondary: '#1e293b',
+                            accent: '#334155',
+                            text: '#e2e8f0',
+                            muted: '#64748b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pranjal Kamboj",
+        "jobTitle": "Machine Learning Engineer",
+        "description": "Experienced Machine Learning Engineer specializing in LLMs, Multi-Agent Systems, and Production AI",
+        "url": "https://pkamboj2000.github.io",
+        "image": "https://avatars.githubusercontent.com/pkamboj2000",
+        "email": "mailto:pxk7885@mavs.uta.edu",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "University of Texas at Arlington"
+        },
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Master of Science in Computer Science"
+        },
+        "knowsAbout": [
+            "Machine Learning",
+            "Artificial Intelligence", 
+            "Large Language Models",
+            "PyTorch",
+            "TensorFlow",
+            "LangChain",
+            "LangGraph",
+            "CrewAI",
+            "Model Context Protocol",
+            "Computer Vision",
+            "Natural Language Processing",
+            "Python Programming",
+            "Deep Learning",
+            "Multi-Agent Systems",
+            "RAG Pipelines",
+            "Vector Databases",
+            "FAISS",
+            "QLoRA Fine-tuning",
+            "Quantization",
+            "Prompt Engineering",
+            "Generative AI",
+            "MLOps",
+            "Production AI",
+            "Groq Infrastructure",
+            "Transformers",
+            "Enterprise AI Solutions"
+        ],
+        "sameAs": [
+            "https://github.com/pkamboj2000",
+            "https://www.linkedin.com/in/pranjal-kamboj/",
+            "mailto:pxk7885@mavs.uta.edu"
+        ],
+        "seeks": {
+            "@type": "JobPosting",
+            "title": "Machine Learning Engineer Position",
+            "description": "Seeking opportunities in Machine Learning, AI Engineering, or Data Science roles"
+        }
+    }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">`
+    <!-- Navigation -->
+    <nav class="bg-slate-800/95 backdrop-blur-sm shadow-xl fixed w-full top-0 z-50 border-b border-slate-700">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">Pranjal Kamboj</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#experience" class="text-slate-300 hover:text-cyan-400 transition-colors">Experience</a>
+                    <a href="#education" class="text-slate-300 hover:text-cyan-400 transition-colors">Education</a>
+                    <a href="#projects" class="text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#skills" class="text-slate-300 hover:text-cyan-400 transition-colors">Skills</a>
+                    <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-slate-300 hover:text-cyan-400">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+                <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 shadow-xl border-t border-slate-700">
+            <div class="px-4 py-2 space-y-1">
+                <a href="#about" class="block py-2 text-slate-300 hover:text-cyan-400">About</a>
+                <a href="#experience" class="block py-2 text-slate-300 hover:text-cyan-400">Experience</a>
+                <a href="#education" class="block py-2 text-slate-300 hover:text-cyan-400">Education</a>
+                <a href="#projects" class="block py-2 text-slate-300 hover:text-cyan-400">Projects</a>
+                <a href="#skills" class="block py-2 text-slate-300 hover:text-cyan-400">Skills</a>
+                <a href="#contact" class="block py-2 text-slate-300 hover:text-cyan-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-20 pb-12 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" 
+                         class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-cyan-400 shadow-2xl">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-slate-100">Pranjal Kamboj</h1>
+                    <p class="text-xl md:text-2xl mb-2 text-cyan-300">Machine Learning Engineer</p>
+                    <p class="text-lg text-slate-300">MS Computer Science • University of Texas at Arlington</p>
+                </div>
+
+                <div class="flex justify-center space-x-4">
+                    <a href="mailto:pxk7885@mavs.uta.edu" class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg">
+                        <i class="fas fa-envelope mr-2"></i>Contact Me
+                    </a>
+                    <a href="https://github.com/pkamboj2000" target="_blank" class="bg-slate-700 text-slate-100 px-6 py-3 rounded-lg font-semibold hover:bg-slate-600 transition-colors border border-slate-600">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-800 transition-all shadow-lg">
+                        <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-12 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-100">Professional Experience</h2>
+                
+                <!-- Current Position -->
+                <div class="mb-12">
+                    <div class="bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl p-8 border border-slate-500 shadow-xl">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">CURRENT</span>
+                                    <span class="text-slate-300 text-sm">Oct 2025 - Present · Full-time</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-100 mb-2">Machine Learning Engineer</h3>
+                                <p class="text-xl text-cyan-400 font-semibold mb-2">Stealth Startup (AI)</p>
+                                <p class="text-slate-400 text-sm">San Francisco, California, United States</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <p class="text-slate-200 mb-4 leading-relaxed">
+                                Founding role at a stealth AI startup, contributing to research and development in machine learning, agentic AI, and safety governance to build protection and policy guard layers for autonomous AI systems.
+                            </p>
+                            <p class="text-slate-200 mb-4 leading-relaxed">
+                                Advancing work in LLM fine-tuning, reinforcement learning from human feedback, hallucination filtering, jailbreak resistance, and policy-aligned generation to ensure secure and compliant AI behavior in real-world environments.
+                            </p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold text-slate-100 mb-3">Key Focus Areas</h4>
+                            <ul class="space-y-3 text-slate-200">
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>AI Safety & Governance:</strong> Building protection and policy guard layers for autonomous AI systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>LLM Fine-tuning & RLHF:</strong> Advancing reinforcement learning from human feedback for model alignment</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Hallucination Filtering & Jailbreak Resistance:</strong> Ensuring secure and compliant AI behavior</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Policy-Aligned Generation:</strong> Developing policy guardrails for real-world AI deployment</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">Python</span>
+                            <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">Deep Learning</span>
+                            <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">Fine Tuning</span>
+                            <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">Generative AI</span>
+                            <span class="bg-yellow-500/20 text-yellow-300 text-xs px-2 py-1 rounded border border-yellow-500/30">Policy Guardrails</span>
+                            <span class="bg-indigo-500/20 text-indigo-300 text-xs px-2 py-1 rounded border border-indigo-500/30">Hallucination Detection</span>
+                            <span class="bg-pink-500/20 text-pink-300 text-xs px-2 py-1 rounded border border-pink-500/30">Safety Alignment</span>
+                            <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded border border-teal-500/30">Agentic AI Architectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Position - Stealth AI Startup Internship -->
+                <div class="mb-12">
+                    <div class="bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl p-8 border border-slate-500 shadow-xl">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-slate-300 text-sm">Sep 2025 - Oct 2025 · Internship</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-100 mb-2">Machine Learning Engineer</h3>
+                                <p class="text-xl text-cyan-400 font-semibold mb-2">Stealth AI Startup</p>
+                                <p class="text-slate-400 text-sm">San Jose, California, United States</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <p class="text-slate-200 mb-4 leading-relaxed">
+                                Founding role at an early-stage startup, contributing to research and development in machine learning, AI agents and multi-agent systems to accelerate chip design and optimization.
+                            </p>
+                            <p class="text-slate-200 mb-4 leading-relaxed">
+                                Advancing research in generative AI, reinforcement learning, deep learning, and agent orchestration frameworks, driving prototyping and experimentation of novel architectures.
+                            </p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold text-slate-100 mb-3">Key Focus Areas</h4>
+                            <ul class="space-y-3 text-slate-200">
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Multi-Agent Systems:</strong> Research and development of AI agents for chip design optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Generative AI & Reinforcement Learning:</strong> Advancing research in generative models and RL for novel architectures</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Agent Orchestration:</strong> Prototyping and experimentation with agent orchestration frameworks</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-500/20 text-blue-300 text-sm px-3 py-1 rounded-full border border-blue-500/30">Python</span>
+                            <span class="bg-green-500/20 text-green-300 text-sm px-3 py-1 rounded-full border border-green-500/30">NLP</span>
+                            <span class="bg-purple-500/20 text-purple-300 text-sm px-3 py-1 rounded-full border border-purple-500/30">Agentic</span>
+                            <span class="bg-red-500/20 text-red-300 text-sm px-3 py-1 rounded-full border border-red-500/30">Multi-agent Systems</span>
+                            <span class="bg-yellow-500/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">Deep Learning</span>
+                            <span class="bg-indigo-500/20 text-indigo-300 text-sm px-3 py-1 rounded-full border border-indigo-500/30">Reinforcement Learning</span>
+                            <span class="bg-pink-500/20 text-pink-300 text-sm px-3 py-1 rounded-full border border-pink-500/30">Generative AI</span>
+                            <span class="bg-teal-500/20 text-teal-300 text-sm px-3 py-1 rounded-full border border-teal-500/30">Agent Orchestration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Position - UTA -->
+                <div class="mb-12">
+                    <div class="bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl p-8 border border-slate-500 shadow-xl">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-slate-300 text-sm">Aug 2025 - Sep 2025</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-100 mb-2">Machine Learning Research Engineer</h3>
+                                <p class="text-xl text-cyan-400 font-semibold mb-4">University of Texas at Arlington</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <p class="text-slate-200 mb-4 leading-relaxed">
+                                Developed educational AI code that professors use to teach Masters students at University of Texas at Arlington. 
+                                Worked independently to create comprehensive AI implementations that demonstrate complex concepts including multi-agent systems and advanced frameworks.
+                            </p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold text-slate-100 mb-3">Key Projects</h4>
+                            <ul class="space-y-3 text-slate-200">
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>CrewAI Implementation:</strong> Developed comprehensive 3-part agent system using CrewAI framework with sequential workflow for educational demonstrations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>LangGraph Development:</strong> Implemented multi-agent collaboration using LangGraph framework for advanced educational scenarios</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-500/20 text-green-300 text-sm px-3 py-1 rounded-full border border-green-500/30">CrewAI</span>
+                            <span class="bg-blue-500/20 text-blue-300 text-sm px-3 py-1 rounded-full border border-blue-500/30">LangGraph</span>
+                            <span class="bg-purple-500/20 text-purple-300 text-sm px-3 py-1 rounded-full border border-purple-500/30">Educational AI</span>
+                            <span class="bg-red-500/20 text-red-300 text-sm px-3 py-1 rounded-full border border-red-500/30">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Position -->
+                <div class="mb-12">
+                    <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 shadow-xl">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-slate-300 text-sm">Jan 2023 - May 2023</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-100 mb-2">Software Developer (AI/ML Focus)</h3>
+                                <p class="text-xl text-cyan-400 font-semibold mb-4">Digitech Software Solutions</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <p class="text-slate-200 mb-4 leading-relaxed">
+                                Developed and deployed machine learning solutions using TensorFlow.js and XGBoost for recommendation systems and predictive analytics. 
+                                Built end-to-end ML pipelines from data preprocessing to model deployment, focusing on real-time inference and performance optimization.
+                            </p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold text-slate-100 mb-3">Key Achievements</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                <div class="bg-slate-700 rounded-lg p-4 text-center border border-slate-600">
+                                    <div class="text-2xl font-bold text-cyan-400">95%</div>
+                                    <div class="text-sm text-slate-300">Model Accuracy</div>
+                                </div>
+                                <div class="bg-slate-700 rounded-lg p-4 text-center border border-slate-600">
+                                    <div class="text-2xl font-bold text-emerald-400">40%</div>
+                                    <div class="text-sm text-slate-300">Performance Improvement</div>
+                                </div>
+                                <div class="bg-slate-700 rounded-lg p-4 text-center border border-slate-600">
+                                    <div class="text-2xl font-bold text-purple-400">Real-time</div>
+                                    <div class="text-sm text-slate-300">ML Inference</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold text-slate-100 mb-3">Technical Responsibilities</h4>
+                            <ul class="space-y-3 text-slate-200">
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>ML Pipeline Development:</strong> Built end-to-end machine learning pipelines using TensorFlow.js for browser-based inference</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Recommendation Systems:</strong> Implemented XGBoost-based recommendation algorithms for e-commerce applications</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Data Processing:</strong> Designed efficient data preprocessing workflows for real-time model predictions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-3 mt-1">•</span>
+                                    <span><strong>Performance Optimization:</strong> Optimized model inference speed and memory usage for production deployment</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-500/20 text-blue-300 text-sm px-3 py-1 rounded-full border border-blue-500/30">TensorFlow.js</span>
+                            <span class="bg-green-500/20 text-green-300 text-sm px-3 py-1 rounded-full border border-green-500/30">XGBoost</span>
+                            <span class="bg-purple-500/20 text-purple-300 text-sm px-3 py-1 rounded-full border border-purple-500/30">Machine Learning</span>
+                            <span class="bg-red-500/20 text-red-300 text-sm px-3 py-1 rounded-full border border-red-500/30">Recommendation Systems</span>
+                            <span class="bg-yellow-500/20 text-yellow-300 text-sm px-3 py-1 rounded-full border border-yellow-500/30">Real-time Inference</span>
+                            <span class="bg-indigo-500/20 text-indigo-300 text-sm px-3 py-1 rounded-full border border-indigo-500/30">Data Pipeline</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-12 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-100">Education</h2>
+                
+                <!-- Master's Degree -->
+                <div class="bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl p-8 border border-slate-500 mb-8 shadow-xl">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-100 mb-2">Master of Science in Computer Science</h3>
+                            <p class="text-xl text-cyan-400 font-semibold">University of Texas at Arlington</p>
+                            <p class="text-slate-300">Arlington, Texas, USA</p>
+                        </div>
+                        <span class="text-slate-300 font-semibold">2023 - 2025</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-slate-100 mb-2">Focus Areas</h4>
+                            <ul class="text-slate-200 space-y-1">
+                                <li>• Machine Learning & AI</li>
+                                <li>• Deep Learning</li>
+                                <li>• Computer Vision</li>
+                                <li>• Natural Language Processing</li>
+                                <li>• Software Engineering</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-100 mb-2">Key Courses</h4>
+                            <ul class="text-slate-200 space-y-1">
+                                <li>• Advanced Machine Learning</li>
+                                <li>• Neural Networks</li>
+                                <li>• Data Mining</li>
+                                <li>• Algorithm Analysis</li>
+                                <li>• Software Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelor's Degree -->
+                <div class="bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl p-8 border border-slate-500 shadow-xl">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-100 mb-2">Bachelor of Technology in Computer Science</h3>
+                            <p class="text-xl text-emerald-400 font-semibold">Guru Gobind Singh Indraprastha University</p>
+                            <p class="text-slate-300">New Delhi, India</p>
+                        </div>
+                        <span class="text-slate-300 font-semibold">2019 - 2023</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-slate-100 mb-2">Core Subjects</h4>
+                            <ul class="text-slate-200 space-y-1">
+                                <li>• Data Structures & Algorithms</li>
+                                <li>• Object-Oriented Programming</li>
+                                <li>• Database Management Systems</li>
+                                <li>• Computer Networks</li>
+                                <li>• Software Engineering</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-100 mb-2">Programming Languages</h4>
+                            <ul class="text-slate-200 space-y-1">
+                                <li>• Java Programming</li>
+                                <li>• Python Development</li>
+                                <li>• Web Technologies</li>
+                                <li>• Database Programming</li>
+                                <li>• System Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-12 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-100">Featured Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Automotive Review Crew — Parallel + Sequential Multi-Agent Workflow -->
+                    <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all hover:transform hover:scale-105 border border-slate-700">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-100 mb-2">Automotive Review Crew — Parallel + Sequential Multi-Agent Workflow</h3>
+                            <p class="text-slate-300 text-sm mb-4">This project showcases a multi-agent workflow using CrewAI to create unbiased automotive reviews. Three reviewer agents gather insights in parallel from Edmunds, Car and Driver, and Top Gear/Autocar/What Car, each extracting pros, cons, and highlights with source links. A final synthesizer agent sequentially combines their outputs.</p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">CrewAI</span>
+                                <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">Multi-Agent</span>
+                                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">Parallel Processing</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">Automotive</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            <p>• 66% faster parallel processing</p>
+                            <p>• Multi-source aggregation</p>
+                            <p>• AI-powered synthesis</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: LangChain Multi-Tool Agent with LLM Integration -->
+                    <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all hover:transform hover:scale-105 border border-slate-700">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-100 mb-2">LangChain Multi-Tool Agent with LLM Integration</h3>
+                            <p class="text-slate-300 text-sm mb-4">This project builds a multi-tool LLM agent system using LangChain, combining Retrieval-Augmented Generation (RAG), Wikipedia, Arxiv, Web Search, Calculator, and Vector DB tools for intelligent, query-driven decision-making.</p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">LangChain</span>
+                                <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">RAG</span>
+                                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">FAISS</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">Multi-Tool</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            <p>• Wikipedia & Arxiv integration</p>
+                            <p>• DuckDuckGo search capability</p>
+                            <p>• HuggingFace embeddings</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Fine-Tuning LLaMA 2 with QLoRA on Alpaca Dataset -->
+                    <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all hover:transform hover:scale-105 border border-slate-700">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-100 mb-2">Fine-Tuning LLaMA 2 with QLoRA on Alpaca Dataset</h3>
+                            <p class="text-slate-300 text-sm mb-4">This project fine-tunes the LLaMA 2 7B model using QLoRA on the Alpaca dataset with 4-bit quantization. It leverages Hugging Face's transformers, peft, and trl libraries for efficient training and inference. Only 0.045% of parameters (LoRA layers) are updated, making it lightweight yet effective.</p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">QLoRA</span>
+                                <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">LLaMA 2 7B</span>
+                                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">4-bit Quantization</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">Alpaca Dataset</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            <p>• Memory-efficient training</p>
+                            <p>• SFTTrainer implementation</p>
+                            <p>• PEFT adapter layers</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Weather Agent using MCP Tools -->
+                    <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all hover:transform hover:scale-105 border border-slate-700">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-100 mb-2">Weather Agent using MCP Tools</h3>
+                            <p class="text-slate-300 text-sm mb-4">This project builds a weather-aware AI agent system using MCP (Model Context Protocol), combining real-time weather APIs, FastAPI, and an LLM-powered agent. The agent uses tools for intelligent, query-driven decision-making based on natural language input.</p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">MCP</span>
+                                <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">FastAPI</span>
+                                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">Weather APIs</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">NWS API</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            <p>• Real-time alerts & forecasts</p>
+                            <p>• SSE & STDIO transport</p>
+                            <p>• Natural language queries</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: AI Document Retrieval Pipeline for ML Engineers -->
+                    <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all hover:transform hover:scale-105 border border-slate-700">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-100 mb-2">AI Document Retrieval Pipeline for ML Engineers</h3>
+                            <p class="text-slate-300 text-sm mb-4">This project builds a LangChain-based RAG (Retrieval-Augmented Generation) pipeline that processes .txt, PDF, and web documents — and uses a custom RunnableLambda to trace each answer back to its original source (like file name and page).</p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">RAG</span>
+                                <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">LangChain</span>
+                                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">FAISS</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">Ollama</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            <p>• Multi-format document support</p>
+                            <p>• Source tracking with RunnableLambda</p>
+                            <p>• Groq LLaMA 3 integration</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Multivariate Pollution Forecasting Using Bi-LSTM -->
+                    <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all hover:transform hover:scale-105 border border-slate-700">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-100 mb-2">Multivariate Pollution Forecasting Using Bi-LSTM</h3>
+                            <p class="text-slate-300 text-sm mb-4">This project builds a multivariate LSTM model to forecast air pollution levels using historical weather and environmental data. It leverages Bidirectional LSTM layers with batch normalization and dropout to capture temporal patterns. The model is trained on features like temperature, wind, dew point, and precipitation for accurate future predictions.</p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">Bi-LSTM</span>
+                                <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded border border-green-500/30">TensorFlow</span>
+                                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded border border-purple-500/30">Time Series</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded border border-red-500/30">Multivariate</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            <p>• Test RMSE: 0.09948</p>
+                            <p>• Batch normalization layers</p>
+                            <p>• Weather pattern analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- View All Projects Section -->
+    <section class="py-8 bg-gradient-to-r from-slate-700 to-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold text-slate-100 mb-4">Want to See More Projects?</h3>
+                <p class="text-slate-300 mb-6">
+                    Explore my complete collection of AI/ML projects, including advanced implementations, research work, and open-source contributions.
+                </p>
+                <a href="https://github.com/pkamboj2000" target="_blank" 
+                   class="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all group shadow-lg">
+                    <i class="fab fa-github mr-3 text-xl"></i>
+                    <span>Find All Projects on GitHub</span>
+                    <i class="fas fa-external-link-alt ml-2 text-sm group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-12 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Technical Skills</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Languages -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Java</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">C++</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Core ML/DL -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Core ML/DL</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">PyTorch</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">TensorFlow</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Keras</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">Scikit-learn</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">Pandas</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">NumPy</span>
+                            <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Apache Spark</span>
+                        </div>
+                    </div>
+
+                    <!-- GenAI/LLMs -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">GenAI/LLMs</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Transformers</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">QLoRA/LoRA</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">PEFT</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">TRL</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">bitsandbytes</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Prompt Engineering</span>
+                        </div>
+                    </div>
+
+                    <!-- RAG & Vector Stores -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">RAG & Vector Stores</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">FAISS</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Pinecone</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Weaviate</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">Chunking/Embedding</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">Semantic Search</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Reranking</span>
+                        </div>
+                    </div>
+
+                    <!-- Agents & Orchestration -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Agents & Orchestration</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">LangGraph</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">CrewAI</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">LangChain</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">Model Context Protocol</span>
+                        </div>
+                    </div>
+
+                    <!-- LLMOps -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">LLMOps</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Latency Tuning</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Prompt Versioning</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Evaluation</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">Traceability</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">MLflow</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">W&B</span>
+                        </div>
+                    </div>
+
+                    <!-- Deployment -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Deployment</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">FastAPI</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Docker</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Kubernetes</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">CI/CD</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">AWS</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">GCP</span>
+                            <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Secrets/Env Management</span>
+                        </div>
+                    </div>
+
+                    <!-- Inference Optimization -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Inference Optimization</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Quantization</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Low-latency Inference</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Groq</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">Streaming Responses</span>
+                        </div>
+                    </div>
+
+                    <!-- Web/Data -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Web/Data</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">BeautifulSoup</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">WebBaseLoader</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">REST APIs</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">SQL (MySQL)</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">React</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Node.js</span>
+                        </div>
+                    </div>
+
+                    <!-- MLOps & Data Engineering -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">MLOps & Data Engineering</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Apache Airflow</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Apache Kafka</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Data Pipelines</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">ETL</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">dbt</span>
+                        </div>
+                    </div>
+
+                    <!-- Visualization & Analytics -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Visualization & Analytics</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Tableau</span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Power BI</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Matplotlib</span>
+                            <span class="bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full">Seaborn</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full">Plotly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+                <p class="text-xl mb-8 text-blue-100">
+                    I'm actively seeking new opportunities in Machine Learning and AI Engineering. 
+                    Let's discuss how I can contribute to your team's success.
+                </p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mb-8">
+                    <a href="mailto:pxk7885@mavs.uta.edu" class="flex items-center text-white hover:text-blue-200 transition-colors">
+                        <i class="fas fa-envelope mr-3 text-xl"></i>
+                        <span class="text-lg">pxk7885@mavs.uta.edu</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="flex items-center text-white hover:text-blue-200 transition-colors">
+                        <i class="fab fa-linkedin mr-3 text-xl"></i>
+                        <span class="text-lg">LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/pkamboj2000" target="_blank" class="flex items-center text-white hover:text-blue-200 transition-colors">
+                        <i class="fab fa-github mr-3 text-xl"></i>
+                        <span class="text-lg">GitHub Profile</span>
+                    </a>
+                </div>
+
+                <div class="flex justify-center space-x-4">
+                    <a href="mailto:pxk7885@mavs.uta.edu" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Send Message
+                    </a>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="mb-4">&copy; 2025 Pranjal Kamboj. All rights reserved.</p>
+                <p class="text-gray-400">Machine Learning Engineer | AI Developer | Available for Hire</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
