@@ -37,13 +37,20 @@
                         'mono': ['JetBrains Mono', 'monospace']
                     },
                     colors: {
-                        'primary': '#0a0a0a',
-                        'secondary': '#171717',
+                        'primary': '#050505',
+                        'secondary': '#0a0a0a',
                         'accent': '#3b82f6',
                         'accent-light': '#60a5fa',
-                        'surface': '#1c1c1c',
-                        'border': '#262626',
+                        'surface': '#111111',
+                        'border': '#1a1a1a',
                         'muted': '#737373'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 2s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
                     }
                 }
             }
@@ -51,39 +58,351 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: #050505;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3b82f6, #8b5cf6); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #60a5fa, #a78bfa); }
+
+        /* Gradient Text */
         .gradient-text {
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* Animated Gradient Background */
+        .animated-gradient {
+            background: linear-gradient(-45deg, #0a0a0a, #111827, #0f172a, #030712);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        /* Glow Animation */
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            to { box-shadow: 0 0 40px rgba(139, 92, 246, 0.4); }
+        }
+
+        /* Particle Effect */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            animation: particleFloat 10s infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+
+        /* Glass Effect */
         .glass {
-            background: rgba(28, 28, 28, 0.8);
+            background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* Card Hover Effect */
+        .card-hover {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.5s;
         }
+
+        .card-hover:hover::before {
+            left: 100%;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        /* Gradient Border */
+        .gradient-border {
+            position: relative;
+            background: #111111;
+            border-radius: 16px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+            background-size: 300% 300%;
+            border-radius: 18px;
+            z-index: -1;
+            animation: borderGradient 4s ease infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes borderGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger Children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .stagger-children.active > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-children.active > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-children.active > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-children.active > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-children.active > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-children.active > *:nth-child(6) { transition-delay: 0.6s; }
+        .stagger-children.active > *:nth-child(7) { transition-delay: 0.7s; }
+        .stagger-children.active > *:nth-child(8) { transition-delay: 0.8s; }
+
+        .stagger-children.active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Magnetic Button */
+        .magnetic-btn {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .magnetic-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Timeline Dot Pulse */
+        .timeline-dot {
+            position: relative;
+        }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+            animation: dotPulse 2s ease-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+        }
+
+        /* Skills Tag Hover */
+        .skill-tag {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #60a5fa;
+        }
+
+        /* Profile Image Animation */
+        .profile-ring {
+            position: relative;
+        }
+
+        .profile-ring::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+            z-index: -1;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Section Title Line Animation */
+        .section-line {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-line::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, transparent);
+            animation: lineShine 3s ease-in-out infinite;
+        }
+
+        @keyframes lineShine {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        /* Navigation Link Underline */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Orb Animation */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: orbFloat 10s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            top: 10%;
+            left: 10%;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            top: 50%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -2.5s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.02); }
+        }
+
+        /* Line Clamp */
         .line-clamp-3 {
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+        /* Cursor Glow Effect */
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: opacity 0.3s;
+        }
     </style>
 
     <!-- Structured Data for SEO -->
@@ -109,72 +428,110 @@
     </script>
 </head>
 <body class="bg-primary text-neutral-200 min-h-screen antialiased">
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
     <!-- Navigation -->
-    <nav class="glass fixed w-full top-0 z-50 border-b border-border">
+    <nav class="glass fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
-                <a href="#" class="text-lg font-semibold text-white tracking-tight">PK</a>
+                <a href="#" class="text-xl font-bold gradient-text tracking-tight">PK</a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm text-muted hover:text-white transition-colors">About</a>
-                    <a href="#experience" class="text-sm text-muted hover:text-white transition-colors">Experience</a>
-                    <a href="#publications" class="text-sm text-muted hover:text-white transition-colors">Publications</a>
-                    <a href="#projects" class="text-sm text-muted hover:text-white transition-colors">Projects</a>
-                    <a href="#skills" class="text-sm text-muted hover:text-white transition-colors">Skills</a>
-                    <a href="#contact" class="text-sm px-4 py-2 bg-white text-primary rounded-full font-medium hover:bg-neutral-200 transition-colors">Contact</a>
+                    <a href="#about" class="nav-link text-sm text-muted hover:text-white transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-sm text-muted hover:text-white transition-colors">Experience</a>
+                    <a href="#publications" class="nav-link text-sm text-muted hover:text-white transition-colors">Publications</a>
+                    <a href="#projects" class="nav-link text-sm text-muted hover:text-white transition-colors">Projects</a>
+                    <a href="#skills" class="nav-link text-sm text-muted hover:text-white transition-colors">Skills</a>
+                    <a href="#contact" class="magnetic-btn text-sm px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all">Contact</a>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-muted hover:text-white">
-                    <i class="fas fa-bars text-lg"></i>
+                <button id="mobile-menu-button" class="md:hidden text-muted hover:text-white transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-border">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#about" class="block text-sm text-muted hover:text-white">About</a>
-                <a href="#experience" class="block text-sm text-muted hover:text-white">Experience</a>
-                <a href="#publications" class="block text-sm text-muted hover:text-white">Publications</a>
-                <a href="#projects" class="block text-sm text-muted hover:text-white">Projects</a>
-                <a href="#skills" class="block text-sm text-muted hover:text-white">Skills</a>
-                <a href="#contact" class="block text-sm text-muted hover:text-white">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5">
+            <div class="px-6 py-4 space-y-3 bg-primary/95 backdrop-blur-xl">
+                <a href="#about" class="block text-sm text-muted hover:text-white py-2">About</a>
+                <a href="#experience" class="block text-sm text-muted hover:text-white py-2">Experience</a>
+                <a href="#publications" class="block text-sm text-muted hover:text-white py-2">Publications</a>
+                <a href="#projects" class="block text-sm text-muted hover:text-white py-2">Projects</a>
+                <a href="#skills" class="block text-sm text-muted hover:text-white py-2">Skills</a>
+                <a href="#contact" class="block text-sm text-muted hover:text-white py-2">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="pt-32 pb-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-pink-600/5"></div>
-        <div class="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <section id="about" class="min-h-screen pt-32 pb-20 relative overflow-hidden animated-gradient">
+        <!-- Animated Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Particles -->
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
+        </div>
         
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <div class="text-center">
-                <div class="mb-8">
-                    <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" 
-                         class="w-28 h-28 rounded-full mx-auto ring-2 ring-border shadow-2xl">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center reveal" id="hero-content">
+                <!-- Profile Image with Animated Ring -->
+                <div class="mb-10 inline-block">
+                    <div class="profile-ring p-1 rounded-full inline-block">
+                        <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" 
+                             class="w-32 h-32 rounded-full shadow-2xl shadow-blue-500/20 object-cover">
+                    </div>
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-                    Pranjal Kamboj
+
+                <!-- Name with Gradient -->
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+                    <span class="text-white">Pranjal</span>
+                    <span class="gradient-text"> Kamboj</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-muted mb-6 font-light">
-                    Machine Learning Engineer
-                </p>
-                <p class="text-base text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Building AI systems that are safe, reliable, and impactful. Currently focused on 
+
+                <!-- Title with Typing Effect Container -->
+                <div class="text-xl md:text-2xl text-muted mb-8 font-light h-8 flex justify-center items-center">
+                    <span id="typed-text" class="text-neutral-300"></span>
+                    <span class="animate-pulse text-blue-500">|</span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-lg text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Building AI systems that are <span class="text-white font-medium">safe</span>, 
+                    <span class="text-white font-medium">reliable</span>, and 
+                    <span class="text-white font-medium">impactful</span>. Currently focused on 
                     LLM alignment, multi-agent architectures, and production-grade ML infrastructure.
                 </p>
                 
-                <div class="flex justify-center items-center space-x-4">
+                <!-- Social Links -->
+                <div class="flex justify-center items-center space-x-4 mb-16">
                     <a href="https://github.com/pkamboj2000" target="_blank" 
-                       class="w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border text-muted hover:text-white hover:border-neutral-500 transition-all">
-                        <i class="fab fa-github"></i>
+                       class="group w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-white/10 text-muted hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
+                        <i class="fab fa-github text-lg group-hover:scale-110 transition-transform"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" 
-                       class="w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border text-muted hover:text-white hover:border-neutral-500 transition-all">
-                        <i class="fab fa-linkedin-in"></i>
+                       class="group w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-white/10 text-muted hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
+                        <i class="fab fa-linkedin-in text-lg group-hover:scale-110 transition-transform"></i>
                     </a>
                     <a href="mailto:pxk7885@mavs.uta.edu" 
-                       class="w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border text-muted hover:text-white hover:border-neutral-500 transition-all">
-                        <i class="fas fa-envelope"></i>
+                       class="group w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-white/10 text-muted hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
+                        <i class="fas fa-envelope text-lg group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="animate-bounce">
+                    <a href="#experience" class="text-muted hover:text-white transition-colors">
+                        <i class="fas fa-chevron-down text-xl"></i>
                     </a>
                 </div>
             </div>
@@ -182,98 +539,102 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-secondary">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
-                <span class="w-8 h-[1px] bg-accent mr-4"></span>
-                Experience
-            </h2>
+    <section id="experience" class="py-24 bg-secondary relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary to-secondary"></div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
+                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
+                    Experience
+                </h2>
+                <p class="text-muted mb-16 max-w-xl">Building the future of AI through innovative engineering and research.</p>
+            </div>
             
-            <div class="space-y-8">
+            <div class="space-y-8 stagger-children" id="experience-items">
                 <!-- Current Position -->
-                <div class="group">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
+                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
+                    <div class="flex items-start space-x-6">
+                        <div class="timeline-dot w-3 h-3 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                         <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                                <h3 class="text-lg font-semibold text-white">Machine Learning Engineer</h3>
-                                <span class="text-sm text-muted font-mono">Oct 2025 — Present</span>
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                                <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
+                                <span class="text-sm text-blue-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-blue-500/10 rounded-full">Oct 2025 — Present</span>
                             </div>
-                            <p class="text-accent-light font-medium mb-3">Stealth Startup (AI) · Full-time</p>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                            <p class="text-blue-400 font-semibold mb-4">Stealth Startup (AI) · Full-time</p>
+                            <p class="text-neutral-400 leading-relaxed mb-6">
                                 Founding ML engineer at a stealth AI startup focused on AI safety and governance. Building protection and policy guard layers for autonomous AI systems through LLM fine-tuning, RLHF, hallucination filtering, jailbreak resistance, and policy-aligned generation.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">AI Safety</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">RLHF</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">LLM Fine-tuning</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">Policy Guardrails</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">AI Safety</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">RLHF</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">LLM Fine-tuning</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Policy Guardrails</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Previous Internship -->
-                <div class="group">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-2 h-2 rounded-full bg-border mt-2 flex-shrink-0"></div>
+                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-3 h-3 rounded-full bg-purple-500/50 mt-2 flex-shrink-0"></div>
                         <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                                <h3 class="text-lg font-semibold text-white">Machine Learning Engineer</h3>
-                                <span class="text-sm text-muted font-mono">Sep 2025 — Oct 2025</span>
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                                <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
+                                <span class="text-sm text-purple-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-purple-500/10 rounded-full">Sep 2025 — Oct 2025</span>
                             </div>
-                            <p class="text-neutral-400 font-medium mb-3">Stealth AI Startup · Internship</p>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                            <p class="text-neutral-400 font-semibold mb-4">Stealth AI Startup · Internship</p>
+                            <p class="text-neutral-400 leading-relaxed mb-6">
                                 Founding role contributing to R&D in machine learning, AI agents, and multi-agent systems for chip design optimization. Advanced research in generative AI, reinforcement learning, and agent orchestration frameworks.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">Multi-Agent Systems</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">Reinforcement Learning</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">Generative AI</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Multi-Agent Systems</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Reinforcement Learning</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Generative AI</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- UTA Research -->
-                <div class="group">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-2 h-2 rounded-full bg-border mt-2 flex-shrink-0"></div>
+                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-3 h-3 rounded-full bg-green-500/50 mt-2 flex-shrink-0"></div>
                         <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                                <h3 class="text-lg font-semibold text-white">Machine Learning Research Engineer</h3>
-                                <span class="text-sm text-muted font-mono">Aug 2025 — Sep 2025</span>
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                                <h3 class="text-xl font-bold text-white">Machine Learning Research Engineer</h3>
+                                <span class="text-sm text-green-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-green-500/10 rounded-full">Aug 2025 — Sep 2025</span>
                             </div>
-                            <p class="text-neutral-400 font-medium mb-3">University of Texas at Arlington</p>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                            <p class="text-neutral-400 font-semibold mb-4">University of Texas at Arlington</p>
+                            <p class="text-neutral-400 leading-relaxed mb-6">
                                 Developed educational AI implementations for Masters-level instruction, including comprehensive multi-agent systems using CrewAI and LangGraph frameworks.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">CrewAI</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">LangGraph</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">Educational AI</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">CrewAI</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">LangGraph</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Educational AI</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Digitech -->
-                <div class="group">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-2 h-2 rounded-full bg-border mt-2 flex-shrink-0"></div>
+                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-3 h-3 rounded-full bg-orange-500/50 mt-2 flex-shrink-0"></div>
                         <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                                <h3 class="text-lg font-semibold text-white">Machine Learning Engineer</h3>
-                                <span class="text-sm text-muted font-mono">Jun 2021 — Jun 2023</span>
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                                <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
+                                <span class="text-sm text-orange-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-orange-500/10 rounded-full">Jun 2021 — Jun 2023</span>
                             </div>
-                            <p class="text-neutral-400 font-medium mb-3">Digitech Software Solutions</p>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                            <p class="text-neutral-400 font-semibold mb-4">Digitech Software Solutions</p>
+                            <p class="text-neutral-400 leading-relaxed mb-6">
                                 Built end-to-end ML pipelines using TensorFlow.js and XGBoost for recommendation systems and predictive analytics. Achieved 95% model accuracy and 40% performance improvement in production systems.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">TensorFlow.js</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">XGBoost</span>
-                                <span class="text-xs px-2 py-1 rounded bg-surface border border-border text-neutral-400">Recommendation Systems</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">TensorFlow.js</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">XGBoost</span>
+                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Recommendation Systems</span>
                             </div>
                         </div>
                     </div>
@@ -283,35 +644,44 @@
     </section>
 
     <!-- Education Section -->
-    <section class="py-20 bg-primary">
+    <section class="py-24 bg-primary relative">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
-                <span class="w-8 h-[1px] bg-accent mr-4"></span>
-                Education
-            </h2>
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
+                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
+                    Education
+                </h2>
+                <p class="text-muted mb-16 max-w-xl">Academic foundation in computer science and machine learning.</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-start justify-between mb-4">
+            <div class="grid md:grid-cols-2 gap-8 stagger-children" id="education-items">
+                <div class="gradient-border card-hover p-8 rounded-2xl">
+                    <div class="flex items-start justify-between mb-6">
                         <div>
-                            <h3 class="text-lg font-semibold text-white">Master of Science</h3>
-                            <p class="text-accent-light">Computer Science</p>
+                            <h3 class="text-xl font-bold text-white mb-1">Master of Science</h3>
+                            <p class="text-blue-400 font-semibold">Computer Science</p>
                         </div>
-                        <span class="text-sm text-muted font-mono">2023 — 2025</span>
+                        <span class="text-sm text-muted font-mono px-3 py-1 bg-white/5 rounded-full">2023 — 2025</span>
                     </div>
-                    <p class="text-neutral-400 font-medium mb-3">University of Texas at Arlington</p>
+                    <p class="text-neutral-300 font-medium mb-4 flex items-center">
+                        <i class="fas fa-university text-blue-400 mr-3"></i>
+                        University of Texas at Arlington
+                    </p>
                     <p class="text-neutral-500 text-sm">Focus: Machine Learning, Deep Learning, Computer Vision, NLP</p>
                 </div>
                 
-                <div class="p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-start justify-between mb-4">
+                <div class="gradient-border card-hover p-8 rounded-2xl">
+                    <div class="flex items-start justify-between mb-6">
                         <div>
-                            <h3 class="text-lg font-semibold text-white">Bachelor of Technology</h3>
-                            <p class="text-accent-light">Computer Science</p>
+                            <h3 class="text-xl font-bold text-white mb-1">Bachelor of Technology</h3>
+                            <p class="text-purple-400 font-semibold">Computer Science</p>
                         </div>
-                        <span class="text-sm text-muted font-mono">2019 — 2023</span>
+                        <span class="text-sm text-muted font-mono px-3 py-1 bg-white/5 rounded-full">2019 — 2023</span>
                     </div>
-                    <p class="text-neutral-400 font-medium mb-3">Guru Gobind Singh Indraprastha University</p>
+                    <p class="text-neutral-300 font-medium mb-4 flex items-center">
+                        <i class="fas fa-university text-purple-400 mr-3"></i>
+                        Guru Gobind Singh Indraprastha University
+                    </p>
                     <p class="text-neutral-500 text-sm">Focus: Data Structures, Algorithms, Software Engineering</p>
                 </div>
             </div>
@@ -319,33 +689,38 @@
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-secondary">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
-                <span class="w-8 h-[1px] bg-accent mr-4"></span>
-                Publications
-            </h2>
+    <section id="publications" class="py-24 bg-secondary relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-500/5 to-transparent"></div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
+                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
+                    Publications
+                </h2>
+                <p class="text-muted mb-16 max-w-xl">Research contributions to the field of AI and machine learning.</p>
+            </div>
             
-            <div class="space-y-6">
-                <div class="p-6 rounded-xl bg-surface border border-border hover-lift group">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-file-alt text-accent"></i>
+            <div class="stagger-children" id="publication-items">
+                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-file-alt text-2xl text-blue-400"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                                 Google-MedGemma Based Abnormality Detection in Musculoskeletal Radiographs
                             </h3>
-                            <p class="text-neutral-400 text-sm mb-3">
-                                Soumyajit Maity, <span class="text-white">Pranjal Kamboj</span>, Sneha Maity, Rajat Singh, and Sankhadeep Chatterjee
+                            <p class="text-neutral-400 mb-4">
+                                Soumyajit Maity, <span class="text-white font-medium">Pranjal Kamboj</span>, Sneha Maity, Rajat Singh, and Sankhadeep Chatterjee
                             </p>
-                            <p class="text-neutral-500 text-sm mb-4">
+                            <p class="text-neutral-500 mb-6 flex items-center">
+                                <i class="fas fa-calendar-alt text-blue-400 mr-2"></i>
                                 Accepted for publication in the Proceedings of ICICT 2026, London
                             </p>
-                            <div class="flex items-center space-x-4">
-                                <span class="text-xs px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">Medical AI</span>
-                                <span class="text-xs px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">Computer Vision</span>
-                                <span class="text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Deep Learning</span>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="text-xs px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">Medical AI</span>
+                                <span class="text-xs px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 font-medium">Computer Vision</span>
+                                <span class="text-xs px-4 py-2 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">Deep Learning</span>
                             </div>
                         </div>
                     </div>
@@ -355,270 +730,306 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-primary">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
-                <span class="w-8 h-[1px] bg-accent mr-4"></span>
-                Featured Projects
-            </h2>
+    <section id="projects" class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-secondary/50 to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
+                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
+                    Featured Projects
+                </h2>
+                <p class="text-muted mb-16 max-w-xl">Innovative solutions leveraging cutting-edge AI technologies.</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children" id="project-items">
                 <!-- Project 1 -->
-                <div class="group p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                            <i class="fas fa-robot text-accent-light"></i>
+                <div class="gradient-border card-hover p-6 rounded-2xl group">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <i class="fas fa-robot text-white text-lg"></i>
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-                    <h3 class="text-base font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                         Automotive Review Crew
                     </h3>
-                    <p class="text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
                         Multi-agent workflow using CrewAI for unbiased automotive reviews. Parallel processing from multiple sources with 66% faster performance.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted">CrewAI</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">Multi-Agent</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">Parallel</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">CrewAI</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Multi-Agent</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Parallel</span>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="group p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-blue-500/20 flex items-center justify-center">
-                            <i class="fas fa-brain text-green-400"></i>
+                <div class="gradient-border card-hover p-6 rounded-2xl group">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <i class="fas fa-brain text-white text-lg"></i>
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-                    <h3 class="text-base font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-green-400 transition-colors">
                         LangChain Multi-Tool Agent
                     </h3>
-                    <p class="text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
                         Multi-tool LLM agent combining RAG, Wikipedia, Arxiv, Web Search, and Vector DB for intelligent query-driven decision-making.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted">LangChain</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">RAG</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">FAISS</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">LangChain</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">RAG</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">FAISS</span>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="group p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                            <i class="fas fa-microchip text-purple-400"></i>
+                <div class="gradient-border card-hover p-6 rounded-2xl group">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <i class="fas fa-microchip text-white text-lg"></i>
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-                    <h3 class="text-base font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                         LLaMA 2 QLoRA Fine-Tuning
                     </h3>
-                    <p class="text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
                         Fine-tuned LLaMA 2 7B using QLoRA with 4-bit quantization on Alpaca dataset. Only 0.045% parameters updated for efficient training.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted">QLoRA</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">LLaMA 2</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">PEFT</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">QLoRA</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">LLaMA 2</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">PEFT</span>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="group p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center">
-                            <i class="fas fa-cloud-sun text-yellow-400"></i>
+                <div class="gradient-border card-hover p-6 rounded-2xl group">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <i class="fas fa-cloud-sun text-white text-lg"></i>
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-                    <h3 class="text-base font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
                         Weather Agent (MCP)
                     </h3>
-                    <p class="text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
                         Weather-aware AI agent using Model Context Protocol with real-time weather APIs, FastAPI, and natural language query support.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted">MCP</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">FastAPI</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">SSE</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">MCP</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">FastAPI</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">SSE</span>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
-                <div class="group p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center">
-                            <i class="fas fa-file-search text-red-400"></i>
+                <div class="gradient-border card-hover p-6 rounded-2xl group">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <i class="fas fa-file-search text-white text-lg"></i>
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-                    <h3 class="text-base font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-red-400 transition-colors">
                         Document Retrieval Pipeline
                     </h3>
-                    <p class="text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
                         LangChain RAG pipeline processing .txt, PDF, and web documents with source tracing using RunnableLambda and Groq LLaMA 3.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted">RAG</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">Groq</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">FAISS</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">RAG</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Groq</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">FAISS</span>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
-                <div class="group p-6 rounded-xl bg-surface border border-border hover-lift">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-green-500/20 flex items-center justify-center">
-                            <i class="fas fa-chart-line text-teal-400"></i>
+                <div class="gradient-border card-hover p-6 rounded-2xl group">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <i class="fas fa-chart-line text-white text-lg"></i>
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-                    <h3 class="text-base font-semibold text-white mb-2 group-hover:text-accent-light transition-colors">
+                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">
                         Pollution Forecasting (Bi-LSTM)
                     </h3>
-                    <p class="text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
                         Multivariate LSTM model for air pollution forecasting using weather data. Achieved 0.099 RMSE with bidirectional layers.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted">Bi-LSTM</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">TensorFlow</span>
-                        <span class="text-xs text-muted">•</span>
-                        <span class="text-xs text-muted">Time Series</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Bi-LSTM</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">TensorFlow</span>
+                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Time Series</span>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-12 text-center">
+            <div class="mt-16 text-center reveal">
                 <a href="https://github.com/pkamboj2000" target="_blank" 
-                   class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-surface border border-border rounded-full hover:border-neutral-500 transition-all group">
-                    <i class="fab fa-github mr-2"></i>
+                   class="magnetic-btn inline-flex items-center px-8 py-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:shadow-xl hover:shadow-blue-500/25 transition-all group">
+                    <i class="fab fa-github mr-3 text-lg"></i>
                     View all projects on GitHub
-                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-secondary">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
-                <span class="w-8 h-[1px] bg-accent mr-4"></span>
-                Technical Expertise
-            </h2>
+    <section id="skills" class="py-24 bg-secondary relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
+                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
+                    Technical Expertise
+                </h2>
+                <p class="text-muted mb-16 max-w-xl">Comprehensive skill set spanning the entire ML/AI stack.</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Languages</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children" id="skills-items">
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-code text-blue-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Languages</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">Python</span>
-                        <span class="block text-sm text-neutral-400">Java</span>
-                        <span class="block text-sm text-neutral-400">JavaScript</span>
-                        <span class="block text-sm text-neutral-400">C++</span>
-                        <span class="block text-sm text-neutral-400">SQL</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Python</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Java</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">JavaScript</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">C++</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">SQL</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">ML / Deep Learning</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-brain text-purple-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">ML / DL</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">PyTorch</span>
-                        <span class="block text-sm text-neutral-400">TensorFlow</span>
-                        <span class="block text-sm text-neutral-400">Keras</span>
-                        <span class="block text-sm text-neutral-400">Scikit-learn</span>
-                        <span class="block text-sm text-neutral-400">Apache Spark</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">PyTorch</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">TensorFlow</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Keras</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Scikit-learn</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Apache Spark</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">GenAI / LLMs</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-wand-magic-sparkles text-green-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">GenAI / LLMs</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">Transformers</span>
-                        <span class="block text-sm text-neutral-400">QLoRA / LoRA</span>
-                        <span class="block text-sm text-neutral-400">PEFT</span>
-                        <span class="block text-sm text-neutral-400">TRL / SFT</span>
-                        <span class="block text-sm text-neutral-400">Prompt Engineering</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Transformers</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">QLoRA / LoRA</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">PEFT</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">TRL / SFT</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Prompt Engineering</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Agents & RAG</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-robot text-orange-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Agents & RAG</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">LangChain</span>
-                        <span class="block text-sm text-neutral-400">LangGraph</span>
-                        <span class="block text-sm text-neutral-400">CrewAI</span>
-                        <span class="block text-sm text-neutral-400">MCP</span>
-                        <span class="block text-sm text-neutral-400">FAISS / Pinecone</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">LangChain</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">LangGraph</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">CrewAI</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">MCP</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">FAISS / Pinecone</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Infrastructure</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-server text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Infrastructure</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">Docker</span>
-                        <span class="block text-sm text-neutral-400">Kubernetes</span>
-                        <span class="block text-sm text-neutral-400">AWS / GCP</span>
-                        <span class="block text-sm text-neutral-400">FastAPI</span>
-                        <span class="block text-sm text-neutral-400">CI/CD</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Docker</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Kubernetes</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">AWS / GCP</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">FastAPI</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">CI/CD</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">MLOps</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-gears text-pink-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">MLOps</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">MLflow</span>
-                        <span class="block text-sm text-neutral-400">Weights & Biases</span>
-                        <span class="block text-sm text-neutral-400">Apache Airflow</span>
-                        <span class="block text-sm text-neutral-400">Apache Kafka</span>
-                        <span class="block text-sm text-neutral-400">dbt</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">MLflow</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Weights & Biases</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Apache Airflow</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Apache Kafka</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">dbt</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Optimization</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-bolt text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Optimization</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">Quantization</span>
-                        <span class="block text-sm text-neutral-400">Groq Inference</span>
-                        <span class="block text-sm text-neutral-400">Low-latency Serving</span>
-                        <span class="block text-sm text-neutral-400">Streaming</span>
-                        <span class="block text-sm text-neutral-400">bitsandbytes</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Quantization</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Groq Inference</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Low-latency Serving</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Streaming</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">bitsandbytes</span>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-xl bg-surface border border-border">
-                    <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Visualization</h3>
+                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-pie text-red-400"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Visualization</h3>
+                    </div>
                     <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400">Tableau</span>
-                        <span class="block text-sm text-neutral-400">Power BI</span>
-                        <span class="block text-sm text-neutral-400">Matplotlib</span>
-                        <span class="block text-sm text-neutral-400">Plotly</span>
-                        <span class="block text-sm text-neutral-400">Seaborn</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Tableau</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Power BI</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Matplotlib</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Plotly</span>
+                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Seaborn</span>
                     </div>
                 </div>
             </div>
@@ -626,22 +1037,26 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-primary">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-2xl font-semibold text-white mb-6">Get in Touch</h2>
-            <p class="text-neutral-400 mb-10 max-w-xl mx-auto">
-                Interested in discussing AI, machine learning, or potential collaborations? Feel free to reach out.
+    <section id="contact" class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Let's Build Something Amazing</h2>
+            <p class="text-lg text-neutral-400 mb-12 max-w-xl mx-auto leading-relaxed">
+                Interested in discussing AI, machine learning, or potential collaborations? I'd love to hear from you.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <a href="mailto:pxk7885@mavs.uta.edu" 
-                   class="inline-flex items-center px-6 py-3 bg-white text-primary rounded-full font-medium hover:bg-neutral-200 transition-colors">
-                    <i class="fas fa-envelope mr-2"></i>
+                   class="magnetic-btn inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-xl hover:shadow-blue-500/25 transition-all group">
+                    <i class="fas fa-envelope mr-3"></i>
                     pxk7885@mavs.uta.edu
+                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank"
-                   class="inline-flex items-center px-6 py-3 bg-surface border border-border text-white rounded-full font-medium hover:border-neutral-500 transition-colors">
-                    <i class="fab fa-linkedin-in mr-2"></i>
+                   class="magnetic-btn inline-flex items-center px-8 py-4 bg-surface/50 border border-white/10 text-white rounded-full font-semibold hover:border-blue-500/50 hover:bg-blue-500/10 transition-all group">
+                    <i class="fab fa-linkedin-in mr-3"></i>
                     LinkedIn
                 </a>
             </div>
@@ -649,19 +1064,19 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-secondary border-t border-border">
+    <footer class="py-8 bg-secondary border-t border-white/5">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-muted">© 2025 Pranjal Kamboj</p>
+                <p class="text-sm text-muted">© 2025 Pranjal Kamboj. Built with passion for AI.</p>
                 <div class="flex items-center space-x-6 mt-4 md:mt-0">
-                    <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors hover:scale-110 transform">
+                        <i class="fab fa-github text-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="text-muted hover:text-white transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="text-muted hover:text-white transition-colors hover:scale-110 transform">
+                        <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
-                    <a href="mailto:pxk7885@mavs.uta.edu" class="text-muted hover:text-white transition-colors">
-                        <i class="fas fa-envelope"></i>
+                    <a href="mailto:pxk7885@mavs.uta.edu" class="text-muted hover:text-white transition-colors hover:scale-110 transform">
+                        <i class="fas fa-envelope text-lg"></i>
                     </a>
                 </div>
             </div>
@@ -670,6 +1085,7 @@
 
     <!-- JavaScript -->
     <script>
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
@@ -681,6 +1097,7 @@
             });
         });
 
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -693,7 +1110,91 @@
                 }
             });
         });
+
+        // Cursor Glow Effect
+        const cursorGlow = document.getElementById('cursor-glow');
+        let mouseX = 0, mouseY = 0;
+        let glowX = 0, glowY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            glowX += (mouseX - glowX) * 0.1;
+            glowY += (mouseY - glowY) * 0.1;
+            cursorGlow.style.left = glowX + 'px';
+            cursorGlow.style.top = glowY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hide cursor glow on mobile
+        if ('ontouchstart' in window) {
+            cursorGlow.style.display = 'none';
+        }
+
+        // Typing Effect
+        const titles = ['Machine Learning Engineer', 'AI Safety Researcher', 'LLM Specialist', 'Multi-Agent Systems Developer'];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedText = document.getElementById('typed-text');
+
+        function typeEffect() {
+            const currentTitle = titles[titleIndex];
+            
+            if (isDeleting) {
+                typedText.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedText.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        typeEffect();
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const staggerElements = document.querySelectorAll('.stagger-children');
+
+        function checkReveal() {
+            const triggerBottom = window.innerHeight * 0.85;
+
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < triggerBottom) {
+                    element.classList.add('active');
+                }
+            });
+
+            staggerElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < triggerBottom) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Initial reveal for hero
+        document.getElementById('hero-content').classList.add('active');
     </script>
 </body>
 </html>
-<!-- Rebuild trigger -->
