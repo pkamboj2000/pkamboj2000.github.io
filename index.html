@@ -18,12 +18,6 @@
     <meta property="og:url" content="https://pkamboj2000.github.io">
     <meta property="og:type" content="website">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pranjal Kamboj | Machine Learning Engineer">
-    <meta name="twitter:description" content="ML Engineer specializing in LLMs and AI systems.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/pkamboj2000">
-    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://pkamboj2000.github.io">
     
@@ -35,22 +29,6 @@
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                         'mono': ['JetBrains Mono', 'monospace']
-                    },
-                    colors: {
-                        'primary': '#050505',
-                        'secondary': '#0a0a0a',
-                        'accent': '#3b82f6',
-                        'accent-light': '#60a5fa',
-                        'surface': '#111111',
-                        'border': '#1a1a1a',
-                        'muted': '#737373'
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 2s infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient': 'gradient 8s ease infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
                     }
                 }
             }
@@ -58,585 +36,393 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; overflow-x: hidden; }
         
-        body { 
-            font-family: 'Inter', sans-serif;
-            background: #050505;
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3b82f6, #8b5cf6); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #60a5fa, #a78bfa); }
-
-        /* Gradient Text */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3b82f6, #8b5cf6); border-radius: 4px; }
+        
         .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        /* Animated Gradient Background */
-        .animated-gradient {
-            background: linear-gradient(-45deg, #0a0a0a, #111827, #0f172a, #030712);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
-        }
-
-        /* Glow Animation */
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-            to { box-shadow: 0 0 40px rgba(139, 92, 246, 0.4); }
-        }
-
-        /* Particle Effect */
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(59, 130, 246, 0.5);
-            border-radius: 50%;
-            animation: particleFloat 10s infinite;
-        }
-
-        @keyframes particleFloat {
-            0%, 100% { transform: translateY(100vh) scale(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
-        }
-
-        /* Glass Effect */
+        
         .glass {
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        /* Card Hover Effect */
-        .card-hover {
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
+        
+        /* Hero Grid Background */
+        .hero-grid {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
-
-        .card-hover::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-            transition: left 0.5s;
+        
+        /* Animated gradient border */
+        @property --angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
         }
-
-        .card-hover:hover::before {
-            left: 100%;
+        
+        .animated-border {
+            --angle: 0deg;
+            border: 2px solid transparent;
+            background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+                        conic-gradient(from var(--angle), #3b82f6, #8b5cf6, #ec4899, #3b82f6) border-box;
+            animation: rotate-border 3s linear infinite;
         }
-
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
-            border-color: rgba(59, 130, 246, 0.3);
+        
+        @keyframes rotate-border {
+            to { --angle: 360deg; }
         }
-
-        /* Gradient Border */
-        .gradient-border {
-            position: relative;
-            background: #111111;
-            border-radius: 16px;
+        
+        /* Glow effect */
+        .glow-blue { box-shadow: 0 0 60px rgba(59, 130, 246, 0.3); }
+        .glow-purple { box-shadow: 0 0 60px rgba(139, 92, 246, 0.3); }
+        
+        /* Card animations */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
         }
-
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
-            background-size: 300% 300%;
-            border-radius: 18px;
-            z-index: -1;
-            animation: borderGradient 4s ease infinite;
-            opacity: 0;
-            transition: opacity 0.3s;
+        .card-3d:hover {
+            transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateZ(20px);
         }
-
-        .gradient-border:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes borderGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* Reveal Animation */
+        
+        /* Reveal animations */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Stagger Children */
-        .stagger-children > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        
+        /* Stagger */
+        .stagger > * { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger.active > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger.active > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger.active > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger.active > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger.active > *:nth-child(6) { transition-delay: 0.6s; }
+        .stagger.active > *:nth-child(7) { transition-delay: 0.7s; }
+        .stagger.active > *:nth-child(8) { transition-delay: 0.8s; }
+        .stagger.active > * { opacity: 1; transform: translateY(0); }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
         }
-
-        .stagger-children.active > *:nth-child(1) { transition-delay: 0.1s; }
-        .stagger-children.active > *:nth-child(2) { transition-delay: 0.2s; }
-        .stagger-children.active > *:nth-child(3) { transition-delay: 0.3s; }
-        .stagger-children.active > *:nth-child(4) { transition-delay: 0.4s; }
-        .stagger-children.active > *:nth-child(5) { transition-delay: 0.5s; }
-        .stagger-children.active > *:nth-child(6) { transition-delay: 0.6s; }
-        .stagger-children.active > *:nth-child(7) { transition-delay: 0.7s; }
-        .stagger-children.active > *:nth-child(8) { transition-delay: 0.8s; }
-
-        .stagger-children.active > * {
-            opacity: 1;
-            transform: translateY(0);
+        .float { animation: float 6s ease-in-out infinite; }
+        .float-delay { animation: float 6s ease-in-out 2s infinite; }
+        .float-delay-2 { animation: float 6s ease-in-out 4s infinite; }
+        
+        /* Tech badge hover */
+        .tech-badge {
+            transition: all 0.3s ease;
         }
-
-        /* Magnetic Button */
-        .magnetic-btn {
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        .tech-badge:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
         }
-
-        .magnetic-btn:hover {
-            transform: scale(1.05);
+        
+        /* Project card image */
+        .project-img {
+            transition: all 0.5s ease;
         }
-
-        /* Timeline Dot Pulse */
-        .timeline-dot {
-            position: relative;
+        .project-card:hover .project-img {
+            transform: scale(1.1);
         }
-
-        .timeline-dot::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: inherit;
-            animation: dotPulse 2s ease-out infinite;
+        
+        /* Typing cursor */
+        .cursor {
+            animation: blink 1s step-end infinite;
         }
-
-        @keyframes dotPulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+        @keyframes blink {
+            50% { opacity: 0; }
         }
-
-        /* Skills Tag Hover */
-        .skill-tag {
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            background: rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.5);
-            color: #60a5fa;
-        }
-
-        /* Profile Image Animation */
-        .profile-ring {
-            position: relative;
-        }
-
-        .profile-ring::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
-            z-index: -1;
-            animation: spin 4s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Section Title Line Animation */
-        .section-line {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-line::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #3b82f6, transparent);
-            animation: lineShine 3s ease-in-out infinite;
-        }
-
-        @keyframes lineShine {
-            0%, 100% { transform: translateX(-100%); }
-            50% { transform: translateX(100%); }
-        }
-
-        /* Navigation Link Underline */
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Orb Animation */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: orbFloat 10s ease-in-out infinite;
-        }
-
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            top: 10%;
-            left: 10%;
-        }
-
-        .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-            top: 50%;
-            right: 10%;
-            animation-delay: -5s;
-        }
-
-        .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
-            bottom: 10%;
-            left: 30%;
-            animation-delay: -2.5s;
-        }
-
-        @keyframes orbFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -30px) scale(1.05); }
-            50% { transform: translate(-20px, 20px) scale(0.95); }
-            75% { transform: translate(20px, 30px) scale(1.02); }
-        }
-
-        /* Line Clamp */
-        .line-clamp-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        /* Cursor Glow Effect */
-        .cursor-glow {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            transition: opacity 0.3s;
-        }
+        
+        /* Line clamp */
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 
-    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Pranjal Kamboj",
         "jobTitle": "Machine Learning Engineer",
-        "description": "Machine Learning Engineer specializing in LLMs, Multi-Agent Systems, and AI Safety",
         "url": "https://pkamboj2000.github.io",
-        "image": "https://avatars.githubusercontent.com/pkamboj2000",
         "email": "mailto:pranjalkamboj9211@gmail.com",
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "University of Texas at Arlington"
-        },
-        "sameAs": [
-            "https://github.com/pkamboj2000",
-            "https://www.linkedin.com/in/pranjal-kamboj/"
-        ]
+        "sameAs": ["https://github.com/pkamboj2000", "https://www.linkedin.com/in/pranjal-kamboj/"]
     }
     </script>
 </head>
-<body class="bg-primary text-neutral-200 min-h-screen antialiased">
-    <!-- Cursor Glow -->
-    <div class="cursor-glow" id="cursor-glow"></div>
+<body class="bg-black text-white antialiased">
 
     <!-- Navigation -->
-    <nav class="glass fixed w-full top-0 z-50">
+    <nav class="glass fixed w-full top-0 z-50 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center h-16">
-                <a href="#" class="text-xl font-bold gradient-text tracking-tight">PK</a>
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-lg">
+                        PK
+                    </div>
+                    <span class="font-semibold text-lg hidden sm:block">Pranjal Kamboj</span>
+                </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link text-sm text-muted hover:text-white transition-colors">About</a>
-                    <a href="#experience" class="nav-link text-sm text-muted hover:text-white transition-colors">Experience</a>
-                    <a href="#publications" class="nav-link text-sm text-muted hover:text-white transition-colors">Publications</a>
-                    <a href="#projects" class="nav-link text-sm text-muted hover:text-white transition-colors">Projects</a>
-                    <a href="#skills" class="nav-link text-sm text-muted hover:text-white transition-colors">Skills</a>
-                    <a href="#contact" class="magnetic-btn text-sm px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all">Contact</a>
+                    <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="#experience" class="text-sm text-gray-400 hover:text-white transition-colors">Experience</a>
+                    <a href="#projects" class="text-sm text-gray-400 hover:text-white transition-colors">Projects</a>
+                    <a href="#skills" class="text-sm text-gray-400 hover:text-white transition-colors">Skills</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+                        Get in Touch
+                    </a>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-muted hover:text-white transition-colors">
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5">
-            <div class="px-6 py-4 space-y-3 bg-primary/95 backdrop-blur-xl">
-                <a href="#about" class="block text-sm text-muted hover:text-white py-2">About</a>
-                <a href="#experience" class="block text-sm text-muted hover:text-white py-2">Experience</a>
-                <a href="#publications" class="block text-sm text-muted hover:text-white py-2">Publications</a>
-                <a href="#projects" class="block text-sm text-muted hover:text-white py-2">Projects</a>
-                <a href="#skills" class="block text-sm text-muted hover:text-white py-2">Skills</a>
-                <a href="#contact" class="block text-sm text-muted hover:text-white py-2">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-black/95">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="block text-gray-400 hover:text-white">About</a>
+                <a href="#experience" class="block text-gray-400 hover:text-white">Experience</a>
+                <a href="#projects" class="block text-gray-400 hover:text-white">Projects</a>
+                <a href="#skills" class="block text-gray-400 hover:text-white">Skills</a>
+                <a href="#contact" class="block text-gray-400 hover:text-white">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="min-h-screen pt-32 pb-20 relative overflow-hidden animated-gradient">
-        <!-- Animated Orbs -->
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-
-        <!-- Particles -->
-        <div class="particles">
-            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
-            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
-            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
-            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
-            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
-            <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
-            <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
+    <section id="about" class="min-h-screen pt-20 relative overflow-hidden hero-grid">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/10 to-black"></div>
+        
+        <!-- Floating AI Images -->
+        <div class="absolute top-32 left-[10%] w-72 h-72 opacity-20 float">
+            <img src="https://img.icons8.com/fluency/512/artificial-intelligence.png" alt="AI" class="w-full h-full object-contain">
+        </div>
+        <div class="absolute top-40 right-[5%] w-64 h-64 opacity-15 float-delay">
+            <img src="https://img.icons8.com/fluency/512/robot-2.png" alt="Robot" class="w-full h-full object-contain">
+        </div>
+        <div class="absolute bottom-20 left-[15%] w-48 h-48 opacity-10 float-delay-2">
+            <img src="https://img.icons8.com/fluency/512/neural-network.png" alt="Neural Network" class="w-full h-full object-contain">
+        </div>
+        <div class="absolute bottom-40 right-[15%] w-56 h-56 opacity-15 float">
+            <img src="https://img.icons8.com/fluency/512/bot.png" alt="Bot" class="w-full h-full object-contain">
         </div>
         
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="text-center reveal" id="hero-content">
-                <!-- Profile Image with Animated Ring -->
-                <div class="mb-10 inline-block">
-                    <div class="profile-ring p-1 rounded-full inline-block">
-                        <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" 
-                             class="w-32 h-32 rounded-full shadow-2xl shadow-blue-500/20 object-cover">
-                    </div>
+        <!-- Glowing orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-32 flex flex-col items-center justify-center min-h-screen">
+            <!-- Profile -->
+            <div class="mb-8 reveal" id="hero-content">
+                <div class="animated-border p-1 rounded-full">
+                    <img src="https://avatars.githubusercontent.com/pkamboj2000" alt="Pranjal Kamboj" 
+                         class="w-36 h-36 rounded-full object-cover">
                 </div>
+            </div>
+            
+            <!-- Badge -->
+            <div class="reveal mb-6">
+                <span class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    Available for opportunities
+                </span>
+            </div>
+            
+            <!-- Name -->
+            <h1 class="reveal text-5xl md:text-7xl lg:text-8xl font-black text-center mb-6 tracking-tight">
+                <span class="text-white">Pranjal</span>
+                <span class="gradient-text"> Kamboj</span>
+            </h1>
+            
+            <!-- Typing Title -->
+            <div class="reveal text-xl md:text-2xl text-gray-400 mb-8 h-8 flex items-center justify-center">
+                <span id="typed-output"></span>
+                <span class="cursor text-blue-500 ml-1">|</span>
+            </div>
+            
+            <!-- Description -->
+            <p class="reveal text-lg md:text-xl text-gray-500 text-center max-w-3xl mb-12 leading-relaxed">
+                Building <span class="text-white">intelligent AI systems</span> that power the future. 
+                Specializing in <span class="text-blue-400">LLMs</span>, <span class="text-purple-400">Multi-Agent Systems</span>, 
+                and <span class="text-pink-400">AI Safety</span>.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="reveal flex flex-col sm:flex-row gap-4 mb-16">
+                <a href="#projects" class="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-center hover:shadow-2xl hover:shadow-blue-500/25 transition-all flex items-center justify-center">
+                    View My Work
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white/5 border border-white/10 rounded-full font-semibold text-center hover:bg-white/10 transition-all">
+                    Contact Me
+                </a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="reveal flex items-center space-x-4">
+                <a href="https://github.com/pkamboj2000" target="_blank" 
+                   class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" 
+                   class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="mailto:pranjalkamboj9211@gmail.com" 
+                   class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-gray-600"></i>
+            </div>
+        </div>
+    </section>
 
-                <!-- Name with Gradient -->
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
-                    <span class="text-white">Pranjal</span>
-                    <span class="gradient-text"> Kamboj</span>
-                </h1>
-
-                <!-- Title with Typing Effect Container -->
-                <div class="text-xl md:text-2xl text-muted mb-8 font-light h-8 flex justify-center items-center">
-                    <span id="typed-text" class="text-neutral-300"></span>
-                    <span class="animate-pulse text-blue-500">|</span>
-                </div>
-
-                <!-- Description -->
-                <p class="text-lg text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                    Building AI systems that are <span class="text-white font-medium">safe</span>, 
-                    <span class="text-white font-medium">reliable</span>, and 
-                    <span class="text-white font-medium">impactful</span>. Currently focused on 
-                    LLM alignment, multi-agent architectures, and production-grade ML infrastructure.
-                </p>
-                
-                <!-- Social Links -->
-                <div class="flex justify-center items-center space-x-4 mb-16">
-                    <a href="https://github.com/pkamboj2000" target="_blank" 
-                       class="group w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-white/10 text-muted hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
-                        <i class="fab fa-github text-lg group-hover:scale-110 transition-transform"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" 
-                       class="group w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-white/10 text-muted hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
-                        <i class="fab fa-linkedin-in text-lg group-hover:scale-110 transition-transform"></i>
-                    </a>
-                    <a href="mailto:pranjalkamboj9211@gmail.com" 
-                       class="group w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-white/10 text-muted hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
-                        <i class="fas fa-envelope text-lg group-hover:scale-110 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Scroll Indicator -->
-                <div class="animate-bounce">
-                    <a href="#experience" class="text-muted hover:text-white transition-colors">
-                        <i class="fas fa-chevron-down text-xl"></i>
-                    </a>
-                </div>
+    <!-- Tech Stack Bar -->
+    <section class="py-12 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <img src="https://img.icons8.com/color/96/python--v1.png" alt="Python" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://img.icons8.com/color/96/pytorch.png" alt="PyTorch" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://img.icons8.com/color/96/tensorflow.png" alt="TensorFlow" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://img.icons8.com/fluency/96/docker.png" alt="Docker" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://img.icons8.com/color/96/amazon-web-services.png" alt="AWS" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://img.icons8.com/color/96/google-cloud.png" alt="GCP" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://img.icons8.com/color/96/kubernetes.png" alt="Kubernetes" class="h-10 opacity-60 hover:opacity-100 transition-opacity">
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-primary to-secondary"></div>
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
-                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
-                    Experience
-                </h2>
-                <p class="text-muted mb-16 max-w-xl">Building the future of AI through innovative engineering and research.</p>
+    <section id="experience" class="py-32 bg-black relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="reveal text-center mb-20">
+                <span class="inline-block px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium mb-4">
+                    Career Journey
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Professional Experience</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Building AI systems at the cutting edge of technology</p>
             </div>
             
-            <div class="space-y-8 stagger-children" id="experience-items">
-                <!-- Current Position -->
-                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
-                    <div class="flex items-start space-x-6">
-                        <div class="timeline-dot w-3 h-3 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                        <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                                <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
-                                <span class="text-sm text-blue-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-blue-500/10 rounded-full">Oct 2025 — Present</span>
+            <div class="space-y-8 stagger" id="exp-items">
+                <!-- Current Role -->
+                <div class="card-3d group relative p-8 rounded-3xl bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-white/10 hover:border-blue-500/30 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                        <img src="https://img.icons8.com/fluency/256/artificial-intelligence.png" alt="AI" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+                                <span class="text-green-400 text-sm font-medium">Current Role</span>
                             </div>
-                            <p class="text-blue-400 font-semibold mb-4">Stealth Startup (AI) · Full-time</p>
-                            <p class="text-neutral-400 leading-relaxed mb-6">
-                                Founding ML engineer at a stealth AI startup focused on AI safety and governance. Building protection and policy guard layers for autonomous AI systems through LLM fine-tuning, RLHF, hallucination filtering, jailbreak resistance, and policy-aligned generation.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">AI Safety</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">RLHF</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">LLM Fine-tuning</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Policy Guardrails</span>
-                            </div>
+                            <h3 class="text-2xl font-bold text-white">Machine Learning Engineer</h3>
+                            <p class="text-blue-400 font-medium">Stealth Startup (AI) · Full-time</p>
                         </div>
+                        <span class="text-sm text-gray-500 font-mono bg-white/5 px-4 py-2 rounded-full">Oct 2025 — Present</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-3xl">
+                        Founding ML engineer focused on AI safety and governance. Building protection and policy guard layers for autonomous AI systems through LLM fine-tuning, RLHF, hallucination filtering, and policy-aligned generation.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20">AI Safety</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 text-sm border border-purple-500/20">RLHF</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 text-sm border border-pink-500/20">LLM Fine-tuning</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 text-sm border border-green-500/20">Policy Guardrails</span>
                     </div>
                 </div>
 
                 <!-- Previous Internship -->
-                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-3 h-3 rounded-full bg-purple-500/50 mt-2 flex-shrink-0"></div>
-                        <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                                <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
-                                <span class="text-sm text-purple-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-purple-500/10 rounded-full">Sep 2025 — Oct 2025</span>
-                            </div>
-                            <p class="text-neutral-400 font-semibold mb-4">Stealth AI Startup · Internship</p>
-                            <p class="text-neutral-400 leading-relaxed mb-6">
-                                Founding role contributing to R&D in machine learning, AI agents, and multi-agent systems for chip design optimization. Advanced research in generative AI, reinforcement learning, and agent orchestration frameworks.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Multi-Agent Systems</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Reinforcement Learning</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Generative AI</span>
-                            </div>
+                <div class="card-3d group relative p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                        <img src="https://img.icons8.com/fluency/256/robot-2.png" alt="Robot" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Machine Learning Engineer</h3>
+                            <p class="text-gray-400 font-medium">Stealth AI Startup · Internship</p>
                         </div>
+                        <span class="text-sm text-gray-500 font-mono bg-white/5 px-4 py-2 rounded-full">Sep 2025 — Oct 2025</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-3xl">
+                        Founding role contributing to R&D in machine learning, AI agents, and multi-agent systems for chip design optimization. Advanced research in generative AI and agent orchestration frameworks.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 text-sm border border-purple-500/20">Multi-Agent Systems</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20">Reinforcement Learning</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 text-sm border border-pink-500/20">Generative AI</span>
                     </div>
                 </div>
 
                 <!-- UTA Research -->
-                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-3 h-3 rounded-full bg-green-500/50 mt-2 flex-shrink-0"></div>
-                        <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                                <h3 class="text-xl font-bold text-white">Machine Learning Research Engineer</h3>
-                                <span class="text-sm text-green-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-green-500/10 rounded-full">Aug 2025 — Sep 2025</span>
-                            </div>
-                            <p class="text-neutral-400 font-semibold mb-4">University of Texas at Arlington</p>
-                            <p class="text-neutral-400 leading-relaxed mb-6">
-                                Developed educational AI implementations for Masters-level instruction, including comprehensive multi-agent systems using CrewAI and LangGraph frameworks.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">CrewAI</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">LangGraph</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Educational AI</span>
-                            </div>
+                <div class="card-3d group relative p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-green-500/30 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                        <img src="https://img.icons8.com/fluency/256/graduation-cap.png" alt="Education" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Machine Learning Research Engineer</h3>
+                            <p class="text-gray-400 font-medium">University of Texas at Arlington</p>
                         </div>
+                        <span class="text-sm text-gray-500 font-mono bg-white/5 px-4 py-2 rounded-full">Aug 2025 — Sep 2025</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-3xl">
+                        Developed educational AI implementations for Masters-level instruction, including comprehensive multi-agent systems using CrewAI and LangGraph frameworks.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 text-sm border border-green-500/20">CrewAI</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20">LangGraph</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 text-sm border border-purple-500/20">Educational AI</span>
                     </div>
                 </div>
 
                 <!-- Digitech -->
-                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-3 h-3 rounded-full bg-orange-500/50 mt-2 flex-shrink-0"></div>
-                        <div class="flex-1">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                                <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
-                                <span class="text-sm text-orange-400 font-mono mt-1 md:mt-0 px-3 py-1 bg-orange-500/10 rounded-full">Jun 2021 — Jun 2023</span>
-                            </div>
-                            <p class="text-neutral-400 font-semibold mb-4">Digitech Software Solutions</p>
-                            <p class="text-neutral-400 leading-relaxed mb-6">
-                                Built end-to-end ML pipelines using TensorFlow.js and XGBoost for recommendation systems and predictive analytics. Achieved 95% model accuracy and 40% performance improvement in production systems.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">TensorFlow.js</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">XGBoost</span>
-                                <span class="skill-tag text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300">Recommendation Systems</span>
-                            </div>
+                <div class="card-3d group relative p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-orange-500/30 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                        <img src="https://img.icons8.com/fluency/256/combo-chart.png" alt="Analytics" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Machine Learning Engineer</h3>
+                            <p class="text-gray-400 font-medium">Digitech Software Solutions</p>
                         </div>
+                        <span class="text-sm text-gray-500 font-mono bg-white/5 px-4 py-2 rounded-full">Jun 2021 — Jun 2023</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-3xl">
+                        Built end-to-end ML pipelines using TensorFlow.js and XGBoost for recommendation systems and predictive analytics. Achieved 95% model accuracy and 40% performance improvement.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-400 text-sm border border-orange-500/20">TensorFlow.js</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 text-sm border border-green-500/20">XGBoost</span>
+                        <span class="tech-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20">Recommendation Systems</span>
                     </div>
                 </div>
             </div>
@@ -644,83 +430,74 @@
     </section>
 
     <!-- Education Section -->
-    <section class="py-24 bg-primary relative">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
-                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
-                    Education
-                </h2>
-                <p class="text-muted mb-16 max-w-xl">Academic foundation in computer science and machine learning.</p>
+    <section class="py-20 bg-gradient-to-b from-black to-gray-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="reveal text-center mb-16">
+                <span class="inline-block px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium mb-4">
+                    Academic Background
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold">Education</h2>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 stagger-children" id="education-items">
-                <div class="gradient-border card-hover p-8 rounded-2xl">
+            <div class="grid md:grid-cols-2 gap-8 stagger" id="edu-items">
+                <div class="card-3d p-8 rounded-3xl bg-gradient-to-br from-blue-900/20 to-transparent border border-white/10 hover:border-blue-500/30 transition-all">
                     <div class="flex items-start justify-between mb-6">
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-1">Master of Science</h3>
-                            <p class="text-blue-400 font-semibold">Computer Science</p>
-                        </div>
-                        <span class="text-sm text-muted font-mono px-3 py-1 bg-white/5 rounded-full">2023 — 2025</span>
+                        <img src="https://img.icons8.com/fluency/96/university.png" alt="University" class="w-16 h-16">
+                        <span class="text-sm text-gray-500 font-mono bg-white/5 px-3 py-1 rounded-full">2023 — 2025</span>
                     </div>
-                    <p class="text-neutral-300 font-medium mb-4 flex items-center">
-                        <i class="fas fa-university text-blue-400 mr-3"></i>
-                        University of Texas at Arlington
-                    </p>
-                    <p class="text-neutral-500 text-sm">Focus: Machine Learning, Deep Learning, Computer Vision, NLP</p>
+                    <h3 class="text-xl font-bold text-white mb-1">Master of Science</h3>
+                    <p class="text-blue-400 font-medium mb-3">Computer Science</p>
+                    <p class="text-gray-400 mb-4">University of Texas at Arlington</p>
+                    <p class="text-gray-500 text-sm">Focus: Machine Learning, Deep Learning, Computer Vision, NLP</p>
                 </div>
                 
-                <div class="gradient-border card-hover p-8 rounded-2xl">
+                <div class="card-3d p-8 rounded-3xl bg-gradient-to-br from-purple-900/20 to-transparent border border-white/10 hover:border-purple-500/30 transition-all">
                     <div class="flex items-start justify-between mb-6">
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-1">Bachelor of Technology</h3>
-                            <p class="text-purple-400 font-semibold">Computer Science</p>
-                        </div>
-                        <span class="text-sm text-muted font-mono px-3 py-1 bg-white/5 rounded-full">2019 — 2023</span>
+                        <img src="https://img.icons8.com/fluency/96/university.png" alt="University" class="w-16 h-16">
+                        <span class="text-sm text-gray-500 font-mono bg-white/5 px-3 py-1 rounded-full">2019 — 2023</span>
                     </div>
-                    <p class="text-neutral-300 font-medium mb-4 flex items-center">
-                        <i class="fas fa-university text-purple-400 mr-3"></i>
-                        Guru Gobind Singh Indraprastha University
-                    </p>
-                    <p class="text-neutral-500 text-sm">Focus: Data Structures, Algorithms, Software Engineering</p>
+                    <h3 class="text-xl font-bold text-white mb-1">Bachelor of Technology</h3>
+                    <p class="text-purple-400 font-medium mb-3">Computer Science</p>
+                    <p class="text-gray-400 mb-4">Guru Gobind Singh Indraprastha University</p>
+                    <p class="text-gray-500 text-sm">Focus: Data Structures, Algorithms, Software Engineering</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-500/5 to-transparent"></div>
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
-                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
-                    Publications
-                </h2>
-                <p class="text-muted mb-16 max-w-xl">Research contributions to the field of AI and machine learning.</p>
+    <section class="py-20 bg-gray-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="reveal text-center mb-16">
+                <span class="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm font-medium mb-4">
+                    Research
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold">Publications</h2>
             </div>
             
-            <div class="stagger-children" id="publication-items">
-                <div class="card-hover p-8 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm group">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-file-alt text-2xl text-blue-400"></i>
+            <div class="reveal">
+                <div class="card-3d p-8 rounded-3xl bg-gradient-to-br from-green-900/20 via-blue-900/10 to-transparent border border-white/10 hover:border-green-500/30 transition-all">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="flex-shrink-0">
+                            <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-green-500/20 to-blue-500/20 flex items-center justify-center">
+                                <img src="https://img.icons8.com/fluency/96/medical-doctor.png" alt="Medical AI" class="w-16 h-16">
+                            </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                            <h3 class="text-xl font-bold text-white mb-3">
                                 Google-MedGemma Based Abnormality Detection in Musculoskeletal Radiographs
                             </h3>
-                            <p class="text-neutral-400 mb-4">
-                                Soumyajit Maity, <span class="text-white font-medium">Pranjal Kamboj</span>, Sneha Maity, Rajat Singh, and Sankhadeep Chatterjee
+                            <p class="text-gray-400 mb-4">
+                                Soumyajit Maity, <span class="text-white">Pranjal Kamboj</span>, Sneha Maity, Rajat Singh, and Sankhadeep Chatterjee
                             </p>
-                            <p class="text-neutral-500 mb-6 flex items-center">
-                                <i class="fas fa-calendar-alt text-blue-400 mr-2"></i>
-                                Accepted for publication in the Proceedings of ICICT 2026, London
+                            <p class="text-gray-500 mb-6 flex items-center">
+                                <i class="fas fa-calendar text-green-400 mr-2"></i>
+                                Accepted for publication in ICICT 2026, London
                             </p>
                             <div class="flex flex-wrap gap-3">
-                                <span class="text-xs px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">Medical AI</span>
-                                <span class="text-xs px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 font-medium">Computer Vision</span>
-                                <span class="text-xs px-4 py-2 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">Deep Learning</span>
+                                <span class="px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm border border-green-500/20">Medical AI</span>
+                                <span class="px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20">Computer Vision</span>
+                                <span class="px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm border border-purple-500/20">Deep Learning</span>
                             </div>
                         </div>
                     </div>
@@ -730,306 +507,290 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-primary relative overflow-hidden">
-        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-secondary/50 to-transparent"></div>
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
-                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
-                    Featured Projects
-                </h2>
-                <p class="text-muted mb-16 max-w-xl">Innovative solutions leveraging cutting-edge AI technologies.</p>
+    <section id="projects" class="py-32 bg-black relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="reveal text-center mb-20">
+                <span class="inline-block px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium mb-4">
+                    Portfolio
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Cutting-edge AI solutions powered by the latest technologies</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children" id="project-items">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger" id="project-items">
                 <!-- Project 1 -->
-                <div class="gradient-border card-hover p-6 rounded-2xl group">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <i class="fas fa-robot text-white text-lg"></i>
+                <div class="project-card card-3d group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" 
+                             alt="Multi-Agent AI" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <img src="https://img.icons8.com/fluency/64/robot-2.png" alt="AI" class="w-12 h-12">
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                        Automotive Review Crew
-                    </h3>
-                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
-                        Multi-agent workflow using CrewAI for unbiased automotive reviews. Parallel processing from multiple sources with 66% faster performance.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">CrewAI</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Multi-Agent</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Parallel</span>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Automotive Review Crew</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Multi-agent workflow using CrewAI for unbiased automotive reviews with 66% faster performance.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">CrewAI</span>
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">Multi-Agent</span>
+                        </div>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-blue-400 text-sm hover:text-blue-300 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="gradient-border card-hover p-6 rounded-2xl group">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <i class="fas fa-brain text-white text-lg"></i>
+                <div class="project-card card-3d group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-green-500/30 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop" 
+                             alt="LangChain Agent" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <img src="https://img.icons8.com/fluency/64/artificial-intelligence.png" alt="AI" class="w-12 h-12">
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-green-400 transition-colors">
-                        LangChain Multi-Tool Agent
-                    </h3>
-                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
-                        Multi-tool LLM agent combining RAG, Wikipedia, Arxiv, Web Search, and Vector DB for intelligent query-driven decision-making.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">LangChain</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">RAG</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">FAISS</span>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">LangChain Multi-Tool Agent</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Multi-tool LLM agent combining RAG, Wikipedia, Arxiv, Web Search, and Vector DB.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">LangChain</span>
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">RAG</span>
+                        </div>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-green-400 text-sm hover:text-green-300 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="gradient-border card-hover p-6 rounded-2xl group">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <i class="fas fa-microchip text-white text-lg"></i>
+                <div class="project-card card-3d group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" 
+                             alt="LLaMA Fine-Tuning" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <img src="https://img.icons8.com/fluency/64/processor.png" alt="Chip" class="w-12 h-12">
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                        LLaMA 2 QLoRA Fine-Tuning
-                    </h3>
-                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
-                        Fine-tuned LLaMA 2 7B using QLoRA with 4-bit quantization on Alpaca dataset. Only 0.045% parameters updated for efficient training.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">QLoRA</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">LLaMA 2</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">PEFT</span>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">LLaMA 2 QLoRA Fine-Tuning</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Fine-tuned LLaMA 2 7B using QLoRA with 4-bit quantization. Only 0.045% parameters updated.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">QLoRA</span>
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">LLaMA 2</span>
+                        </div>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-purple-400 text-sm hover:text-purple-300 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="gradient-border card-hover p-6 rounded-2xl group">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <i class="fas fa-cloud-sun text-white text-lg"></i>
+                <div class="project-card card-3d group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-yellow-500/30 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop" 
+                             alt="Weather Agent" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <img src="https://img.icons8.com/fluency/64/partly-cloudy-day.png" alt="Weather" class="w-12 h-12">
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
-                        Weather Agent (MCP)
-                    </h3>
-                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
-                        Weather-aware AI agent using Model Context Protocol with real-time weather APIs, FastAPI, and natural language query support.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">MCP</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">FastAPI</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">SSE</span>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Weather Agent (MCP)</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Weather-aware AI agent using Model Context Protocol with real-time APIs and FastAPI.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">MCP</span>
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">FastAPI</span>
+                        </div>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-yellow-400 text-sm hover:text-yellow-300 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
-                <div class="gradient-border card-hover p-6 rounded-2xl group">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <i class="fas fa-file-search text-white text-lg"></i>
+                <div class="project-card card-3d group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-red-500/30 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=600&h=400&fit=crop" 
+                             alt="Document Retrieval" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <img src="https://img.icons8.com/fluency/64/document.png" alt="Document" class="w-12 h-12">
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-red-400 transition-colors">
-                        Document Retrieval Pipeline
-                    </h3>
-                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
-                        LangChain RAG pipeline processing .txt, PDF, and web documents with source tracing using RunnableLambda and Groq LLaMA 3.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">RAG</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Groq</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">FAISS</span>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors">Document Retrieval Pipeline</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">LangChain RAG pipeline processing .txt, PDF, and web documents with source tracing.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">RAG</span>
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">Groq</span>
+                        </div>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-red-400 text-sm hover:text-red-300 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
-                <div class="gradient-border card-hover p-6 rounded-2xl group">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <i class="fas fa-chart-line text-white text-lg"></i>
+                <div class="project-card card-3d group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-teal-500/30 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&h=400&fit=crop" 
+                             alt="Pollution Forecasting" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <img src="https://img.icons8.com/fluency/64/graph.png" alt="Analytics" class="w-12 h-12">
                         </div>
-                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors group-hover:translate-x-1 duration-300">
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">
-                        Pollution Forecasting (Bi-LSTM)
-                    </h3>
-                    <p class="text-neutral-500 text-sm mb-5 line-clamp-3 leading-relaxed">
-                        Multivariate LSTM model for air pollution forecasting using weather data. Achieved 0.099 RMSE with bidirectional layers.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Bi-LSTM</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">TensorFlow</span>
-                        <span class="text-xs text-muted bg-white/5 px-2 py-1 rounded">Time Series</span>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Pollution Forecasting (Bi-LSTM)</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Multivariate LSTM model for air pollution forecasting. Achieved 0.099 RMSE.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">Bi-LSTM</span>
+                            <span class="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">TensorFlow</span>
+                        </div>
+                        <a href="https://github.com/pkamboj2000" target="_blank" class="text-teal-400 text-sm hover:text-teal-300 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-16 text-center reveal">
+            <div class="reveal text-center mt-16">
                 <a href="https://github.com/pkamboj2000" target="_blank" 
-                   class="magnetic-btn inline-flex items-center px-8 py-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:shadow-xl hover:shadow-blue-500/25 transition-all group">
-                    <i class="fab fa-github mr-3 text-lg"></i>
-                    View all projects on GitHub
-                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all group">
+                    <i class="fab fa-github mr-3 text-xl"></i>
+                    View All Projects on GitHub
+                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center">
-                    <span class="section-line w-12 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mr-4"></span>
-                    Technical Expertise
-                </h2>
-                <p class="text-muted mb-16 max-w-xl">Comprehensive skill set spanning the entire ML/AI stack.</p>
+    <section id="skills" class="py-32 bg-gradient-to-b from-black to-gray-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="reveal text-center mb-20">
+                <span class="inline-block px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium mb-4">
+                    Tech Stack
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Technical Expertise</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Comprehensive skill set spanning the entire ML/AI pipeline</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children" id="skills-items">
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 stagger" id="skills-items">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-blue-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-code text-blue-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Languages</h3>
+                        <img src="https://img.icons8.com/fluency/64/code.png" alt="Code" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">Languages</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Python</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Java</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">JavaScript</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">C++</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">SQL</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">Python</p>
+                        <p class="hover:text-white transition-colors">Java</p>
+                        <p class="hover:text-white transition-colors">JavaScript</p>
+                        <p class="hover:text-white transition-colors">C++</p>
+                        <p class="hover:text-white transition-colors">SQL</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-brain text-purple-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">ML / DL</h3>
+                        <img src="https://img.icons8.com/fluency/64/artificial-intelligence.png" alt="AI" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">ML / DL</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">PyTorch</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">TensorFlow</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Keras</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Scikit-learn</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Apache Spark</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">PyTorch</p>
+                        <p class="hover:text-white transition-colors">TensorFlow</p>
+                        <p class="hover:text-white transition-colors">Keras</p>
+                        <p class="hover:text-white transition-colors">Scikit-learn</p>
+                        <p class="hover:text-white transition-colors">Apache Spark</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-green-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-wand-magic-sparkles text-green-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">GenAI / LLMs</h3>
+                        <img src="https://img.icons8.com/fluency/64/chatgpt.png" alt="LLM" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">GenAI / LLMs</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Transformers</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">QLoRA / LoRA</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">PEFT</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">TRL / SFT</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Prompt Engineering</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">Transformers</p>
+                        <p class="hover:text-white transition-colors">QLoRA / LoRA</p>
+                        <p class="hover:text-white transition-colors">PEFT</p>
+                        <p class="hover:text-white transition-colors">TRL / SFT</p>
+                        <p class="hover:text-white transition-colors">Prompt Engineering</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-orange-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-robot text-orange-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Agents & RAG</h3>
+                        <img src="https://img.icons8.com/fluency/64/robot-2.png" alt="Agent" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">Agents & RAG</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">LangChain</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">LangGraph</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">CrewAI</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">MCP</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">FAISS / Pinecone</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">LangChain</p>
+                        <p class="hover:text-white transition-colors">LangGraph</p>
+                        <p class="hover:text-white transition-colors">CrewAI</p>
+                        <p class="hover:text-white transition-colors">MCP</p>
+                        <p class="hover:text-white transition-colors">FAISS / Pinecone</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-server text-cyan-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Infrastructure</h3>
+                        <img src="https://img.icons8.com/fluency/64/server.png" alt="Server" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">Infrastructure</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Docker</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Kubernetes</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">AWS / GCP</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">FastAPI</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">CI/CD</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">Docker</p>
+                        <p class="hover:text-white transition-colors">Kubernetes</p>
+                        <p class="hover:text-white transition-colors">AWS / GCP</p>
+                        <p class="hover:text-white transition-colors">FastAPI</p>
+                        <p class="hover:text-white transition-colors">CI/CD</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-pink-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-gears text-pink-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">MLOps</h3>
+                        <img src="https://img.icons8.com/fluency/64/settings.png" alt="MLOps" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">MLOps</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">MLflow</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Weights & Biases</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Apache Airflow</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Apache Kafka</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">dbt</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">MLflow</p>
+                        <p class="hover:text-white transition-colors">Weights & Biases</p>
+                        <p class="hover:text-white transition-colors">Apache Airflow</p>
+                        <p class="hover:text-white transition-colors">Apache Kafka</p>
+                        <p class="hover:text-white transition-colors">dbt</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-yellow-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-bolt text-yellow-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Optimization</h3>
+                        <img src="https://img.icons8.com/fluency/64/speed.png" alt="Speed" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">Optimization</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Quantization</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Groq Inference</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Low-latency Serving</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Streaming</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">bitsandbytes</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">Quantization</p>
+                        <p class="hover:text-white transition-colors">Groq Inference</p>
+                        <p class="hover:text-white transition-colors">Low-latency Serving</p>
+                        <p class="hover:text-white transition-colors">Streaming</p>
+                        <p class="hover:text-white transition-colors">bitsandbytes</p>
                     </div>
                 </div>
 
-                <div class="card-hover p-6 rounded-2xl bg-surface/30 border border-white/5 backdrop-blur-sm group">
+                <div class="card-3d p-6 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-red-500/30 transition-all group">
                     <div class="flex items-center mb-5">
-                        <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-chart-pie text-red-400"></i>
-                        </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Visualization</h3>
+                        <img src="https://img.icons8.com/fluency/64/combo-chart.png" alt="Chart" class="w-10 h-10 mr-3 group-hover:scale-110 transition-transform">
+                        <h3 class="font-bold text-white">Visualization</h3>
                     </div>
-                    <div class="space-y-2">
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Tableau</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Power BI</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Matplotlib</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Plotly</span>
-                        <span class="block text-sm text-neutral-400 hover:text-white transition-colors cursor-default">Seaborn</span>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p class="hover:text-white transition-colors">Tableau</p>
+                        <p class="hover:text-white transition-colors">Power BI</p>
+                        <p class="hover:text-white transition-colors">Matplotlib</p>
+                        <p class="hover:text-white transition-colors">Plotly</p>
+                        <p class="hover:text-white transition-colors">Seaborn</p>
                     </div>
                 </div>
             </div>
@@ -1037,164 +798,133 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-primary relative overflow-hidden">
+    <section id="contact" class="py-32 bg-black relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"></div>
         <div class="absolute inset-0">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-[150px]"></div>
         </div>
-        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Let's Build Something Amazing</h2>
-            <p class="text-lg text-neutral-400 mb-12 max-w-xl mx-auto leading-relaxed">
-                Interested in discussing AI, machine learning, or potential collaborations? I'd love to hear from you.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="mailto:pranjalkamboj9211@gmail.com" 
-                   class="magnetic-btn inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-xl hover:shadow-blue-500/25 transition-all group">
-                    <i class="fas fa-envelope mr-3"></i>
-                    pranjalkamboj9211@gmail.com
-                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank"
-                   class="magnetic-btn inline-flex items-center px-8 py-4 bg-surface/50 border border-white/10 text-white rounded-full font-semibold hover:border-blue-500/50 hover:bg-blue-500/10 transition-all group">
-                    <i class="fab fa-linkedin-in mr-3"></i>
-                    LinkedIn
-                </a>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="reveal">
+                <span class="inline-block px-4 py-2 rounded-full bg-pink-500/10 text-pink-400 text-sm font-medium mb-4">
+                    Let's Connect
+                </span>
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Let's Build Something<br><span class="gradient-text">Amazing Together</span></h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Interested in AI, machine learning, or potential collaborations? I'd love to hear from you.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+                    <a href="mailto:pranjalkamboj9211@gmail.com" 
+                       class="group w-full sm:w-auto px-8 py-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all flex items-center justify-center">
+                        <i class="fas fa-envelope mr-3 text-xl"></i>
+                        pranjalkamboj9211@gmail.com
+                        <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank"
+                       class="w-full sm:w-auto px-8 py-5 bg-white/5 border border-white/10 rounded-2xl font-semibold hover:bg-white/10 transition-all flex items-center justify-center">
+                        <i class="fab fa-linkedin-in mr-3 text-xl"></i>
+                        LinkedIn
+                    </a>
+                </div>
+
+                <div class="flex justify-center space-x-4">
+                    <a href="https://github.com/pkamboj2000" target="_blank" 
+                       class="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" 
+                       class="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="mailto:pranjalkamboj9211@gmail.com" 
+                       class="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-secondary border-t border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
+    <footer class="py-8 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-muted">© 2025 Pranjal Kamboj. Built with passion for AI.</p>
-                <div class="flex items-center space-x-6 mt-4 md:mt-0">
-                    <a href="https://github.com/pkamboj2000" target="_blank" class="text-muted hover:text-white transition-colors hover:scale-110 transform">
-                        <i class="fab fa-github text-lg"></i>
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-sm">
+                        PK
+                    </div>
+                    <span class="text-gray-500 text-sm">© 2025 Pranjal Kamboj. All rights reserved.</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/pkamboj2000" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="text-muted hover:text-white transition-colors hover:scale-110 transform">
-                        <i class="fab fa-linkedin-in text-lg"></i>
+                    <a href="https://www.linkedin.com/in/pranjal-kamboj/" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="mailto:pranjalkamboj9211@gmail.com" class="text-muted hover:text-white transition-colors hover:scale-110 transform">
-                        <i class="fas fa-envelope text-lg"></i>
+                    <a href="mailto:pranjalkamboj9211@gmail.com" class="text-gray-500 hover:text-white transition-colors">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
+            link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
         });
 
-        // Smooth Scroll
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Cursor Glow Effect
-        const cursorGlow = document.getElementById('cursor-glow');
-        let mouseX = 0, mouseY = 0;
-        let glowX = 0, glowY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        function animateCursor() {
-            glowX += (mouseX - glowX) * 0.1;
-            glowY += (mouseY - glowY) * 0.1;
-            cursorGlow.style.left = glowX + 'px';
-            cursorGlow.style.top = glowY + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Hide cursor glow on mobile
-        if ('ontouchstart' in window) {
-            cursorGlow.style.display = 'none';
-        }
-
-        // Typing Effect
+        // Typing effect
         const titles = ['Machine Learning Engineer', 'AI Safety Researcher', 'LLM Specialist', 'Multi-Agent Systems Developer'];
-        let titleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typedText = document.getElementById('typed-text');
+        let titleIndex = 0, charIndex = 0, isDeleting = false;
+        const typedOutput = document.getElementById('typed-output');
 
         function typeEffect() {
-            const currentTitle = titles[titleIndex];
-            
+            const current = titles[titleIndex];
             if (isDeleting) {
-                typedText.textContent = currentTitle.substring(0, charIndex - 1);
+                typedOutput.textContent = current.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                typedText.textContent = currentTitle.substring(0, charIndex + 1);
+                typedOutput.textContent = current.substring(0, charIndex + 1);
                 charIndex++;
             }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentTitle.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                titleIndex = (titleIndex + 1) % titles.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(typeEffect, typeSpeed);
+            let speed = isDeleting ? 40 : 80;
+            if (!isDeleting && charIndex === current.length) { speed = 2000; isDeleting = true; }
+            else if (isDeleting && charIndex === 0) { isDeleting = false; titleIndex = (titleIndex + 1) % titles.length; speed = 500; }
+            setTimeout(typeEffect, speed);
         }
         typeEffect();
 
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        const staggerElements = document.querySelectorAll('.stagger-children');
-
+        // Scroll reveal
         function checkReveal() {
-            const triggerBottom = window.innerHeight * 0.85;
-
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < triggerBottom) {
-                    element.classList.add('active');
-                }
+            const trigger = window.innerHeight * 0.85;
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < trigger) el.classList.add('active');
             });
-
-            staggerElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < triggerBottom) {
-                    element.classList.add('active');
-                }
+            document.querySelectorAll('.stagger').forEach(el => {
+                if (el.getBoundingClientRect().top < trigger) el.classList.add('active');
             });
         }
-
         window.addEventListener('scroll', checkReveal);
-        window.addEventListener('load', checkReveal);
-
-        // Initial reveal for hero
-        document.getElementById('hero-content').classList.add('active');
+        window.addEventListener('load', () => {
+            checkReveal();
+            document.getElementById('hero-content').classList.add('active');
+        });
     </script>
 </body>
 </html>
